@@ -1,0 +1,218 @@
+<div class="content-popup">
+  <div class="search-form">
+    <form id="popup-filter" action="https://5sfashion.vn/search" data-gtm-form-interact-id="0">
+      <div class="icon-close" (click)="onCloseClick()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path
+            d="M18 6L6 18"
+            stroke="#696B73"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+          <path
+            d="M6 6L18 18"
+            stroke="#696B73"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </svg>
+      </div>
+      <input
+        class="search-input"
+        type="text"
+        id="search-input-popup"
+        data-toggle="input-search"
+        name="search"
+        placeholder="Tìm kiếm sản phẩm..."
+        data-gtm-form-interact-field-id="0"
+      />
+    </form>
+  </div>
+  <div class="suggest-block">
+    <div class="product-suggest">
+      <div class="title-block">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          viewBox="0 0 22 22"
+          fill="none"
+        >
+          <path
+            d="M15.6285 18.5443C15.2746 19.3725 14.1766 19.6016 13.373 19.6075L8.61285 19.6071C8.49265 19.6056 8.36404 19.6085 8.24572 19.5852L7.67973 19.5031C7.22119 19.4015 6.72323 19.1085 6.47075 18.7061C6.10928 18.13 6.16578 17.2767 6.24716 16.6186L6.65604 13.4214L6.62339 11.7954C6.57593 11.9158 6.54111 12.0548 6.49632 12.1802L5.50622 15.0786C5.22697 15.9023 4.91506 16.887 4.2291 17.4709C4.16945 17.5217 4.12274 17.5357 4.09745 17.6116L3.87393 18.318C3.78114 18.6192 3.62582 18.63 3.36498 18.6049C3.0701 18.5766 2.19695 18.4367 1.9472 18.2531C1.6706 18.0498 1.84895 17.7787 1.94974 17.5389C2.01087 17.3934 2.06643 17.2442 2.13772 17.1032C2.31271 16.7573 2.17388 16.9855 2.12305 16.6169L2.12073 16.599C2.06289 16.1741 2.23548 15.5255 2.36202 15.1096L3.51975 11.697L4.25624 8.99609C4.32624 8.71455 4.39128 8.42518 4.42293 8.13667L4.48871 7.28507C4.59339 6.25928 5.17537 5.30888 6.13712 4.88626C6.36366 4.78672 6.60706 4.7158 6.84376 4.64493L7.41785 4.47975L7.39883 4.35533C7.3318 3.77674 7.46995 2.46099 8.23704 2.37378C8.62389 2.39176 8.93764 2.78786 9.00456 3.15273L9.19594 3.90493C9.54436 4.85611 10.5441 5.59931 11.5649 5.20501C12.2475 4.94138 12.7023 4.31924 12.8905 3.62778C12.955 3.39082 12.9692 3.15287 13.0709 2.9253C13.406 2.1759 14.1655 2.20293 14.4311 3.01811C14.5621 3.42023 14.6913 4.04271 14.5905 4.46991L14.5862 4.4872C14.725 4.54097 14.8879 4.56615 15.0325 4.60518C16.6299 5.03641 17.3974 5.81889 17.5279 7.56479L17.6186 8.43393C17.6447 8.60462 17.6921 8.7726 17.7315 8.94017L17.8493 9.45027C17.8875 9.61208 17.946 9.77266 17.9795 9.93539L18.0723 10.2812C18.0837 10.3418 18.1075 10.3982 18.12 10.4588L19.0884 13.5457C19.1362 13.7203 19.2146 13.8938 19.2773 14.0643L19.5685 14.8911L19.7982 15.766C19.9028 16.1001 19.925 16.5723 19.7898 16.895C19.7712 16.9394 19.8194 17.0071 19.8371 17.0512L20.1173 17.6875C20.145 17.7582 20.186 17.8125 20.198 17.8899L20.2004 17.9073C20.2788 18.4442 19.0213 18.5994 18.6519 18.6035C18.3548 18.6069 18.2187 18.5226 18.1157 18.2366L17.988 17.831C17.9152 17.5869 17.9155 17.5866 17.7252 17.4185C16.757 16.5631 16.3097 14.4533 15.9074 13.2533C15.7423 12.7611 15.5068 12.2837 15.3799 11.7809C15.313 12.0659 15.339 12.4071 15.3382 12.6985L15.3488 13.54C15.3534 13.6192 15.3686 13.6974 15.3761 13.7763L15.7724 16.9252C15.8223 17.4598 15.8577 18.0441 15.6285 18.5443ZM13.7181 3.04678L13.7118 3.05638C13.6339 3.17885 13.6115 3.37874 13.5811 3.52111L13.4817 3.90955C13.2123 4.82777 12.4964 5.66026 11.5438 5.88819C10.1377 6.22467 8.91189 5.2229 8.52784 3.90148L8.41937 3.4958C8.383 3.3413 8.3537 3.17996 8.27906 3.03896C8.05704 3.34743 8.01176 3.88325 8.02757 4.24707C8.04955 4.76368 9.03358 5.63865 9.41666 5.90795L10.0572 6.31481C10.3682 6.50999 10.6878 6.71221 11.0173 6.87497C11.1964 6.77723 11.3592 6.65446 11.5338 6.54964L12.2656 6.12307C12.7796 5.79879 13.7397 4.98759 13.9397 4.38301L13.9462 4.36494C14.0347 4.11086 13.9298 3.22161 13.7346 3.04756L13.7181 3.04678ZM7.695 5.07137C7.51625 5.13285 7.32763 5.17369 7.145 5.22339L6.69938 5.36823C5.53154 5.76778 5.1884 6.52074 5.10012 7.6563C5.03846 8.44959 4.86464 9.2023 4.66457 9.97176L4.36601 11.0763L3.4859 13.8334C3.36394 14.1791 2.56568 16.2949 2.75979 16.6011C2.89548 16.8152 3.63373 16.9451 3.8519 16.9361C4.30354 16.5167 4.56718 15.8452 4.77096 15.2814L5.70126 12.4667L6.36836 10.703C6.47045 10.3972 6.48967 9.70611 6.83289 9.72774C7.0723 9.74285 7.13554 9.93208 7.14516 10.1385L7.25852 11.7982C7.26437 11.8896 7.28448 11.9795 7.28897 12.0707L7.29494 12.9331C7.29438 13.1596 7.30003 13.3911 7.28168 13.6167L6.95059 16.2178C6.88529 16.6219 6.82252 17.0233 6.82386 17.4335C6.82872 18.9236 7.80007 18.9663 8.97094 18.9677L12.3671 18.9675C13.1048 18.9672 14.0958 19.0715 14.7317 18.6182C15.1886 18.2925 15.1788 17.7907 15.177 17.2912C15.1679 17.0071 15.1261 16.7275 15.0892 16.4463L14.7344 13.585C14.7094 13.3085 14.7104 13.0418 14.7104 12.7635L14.7136 11.9665L14.8382 10.3406C14.8449 10.2044 14.807 10.0189 14.8838 9.8992L14.8942 9.88242C15.0351 9.6618 15.3182 9.68135 15.4229 9.91186L15.4287 9.9243C15.4405 9.9505 15.4451 9.97472 15.4498 10.0029L15.4588 10.0409C15.5408 10.3343 15.5777 10.5431 15.683 10.8483L16.6632 13.5091L17.2719 15.4084C17.3553 15.6125 17.4251 15.8182 17.5192 16.0186C17.5964 16.1827 17.9915 16.87 18.1556 16.9433C18.2625 16.9376 18.3683 16.9125 18.4729 16.8916C19.3337 16.72 19.3564 16.6716 19.1876 15.928C19.0076 15.1347 18.7019 14.3911 18.4404 13.6235L17.5556 10.8045L17.2469 9.62381C17.1483 9.22916 17.0485 8.83299 16.9857 8.43066C16.8151 7.33743 16.9968 6.55628 16.0406 5.73638C15.7594 5.49533 14.7289 5.13042 14.3049 5.06357L14.0114 5.4504C13.3935 6.21847 12.6308 6.65775 11.7978 7.15339C11.0151 7.61907 11.189 7.70445 10.4121 7.27581C9.54389 6.79676 8.60704 6.26127 7.98735 5.46467C7.93846 5.40183 7.74357 5.09034 7.695 5.07137ZM19.257 17.3199L19.0638 17.4115C18.8959 17.4786 18.7293 17.4989 18.5527 17.5262L18.6946 17.9593C18.7218 17.9653 18.7385 17.9645 18.7657 17.959C18.9965 17.9308 19.2594 17.8888 19.4771 17.8052L19.257 17.3199ZM2.75003 17.3346L2.74598 17.3467C2.51564 18.0201 2.31466 17.7313 3.27004 17.9692L3.30512 17.9709C3.34184 17.917 3.36063 17.8287 3.37796 17.7654L3.45309 17.5227C3.28429 17.4966 3.12543 17.4647 2.96251 17.4126C2.90408 17.394 2.80743 17.3333 2.75003 17.3346Z"
+            fill="#BF272D"
+          ></path>
+        </svg>
+        <span>Sản phẩm được tìm kiếm nhiều nhất</span>
+      </div>
+      <div class="list-product">
+        <div class="item-product-suggest">
+          <div class="product-image">
+            <a
+              href="https://5sfashion.vn/san-pham/tat-be-gai-5s-fashion-phoi-ke-co-gian-day-dan-g0tat25003"
+            >
+              <img
+                data-src="https://1557691689.e.cdneverest.net/fast/180x0/filters:format(webp)/static.5sfashion.vn/storage/product/QQIV1vNdpcJgiK6smjMp5y4PgkBxklWk.webp"
+                src="https://1557691689.e.cdneverest.net/fast/180x0/filters:format(webp)/static.5sfashion.vn/storage/product/QQIV1vNdpcJgiK6smjMp5y4PgkBxklWk.webp"
+                alt="Tất Bé Gái 5S Fashion Phối Kẻ Co Giãn Dày Dặn G0TAT25003"
+                data-ll-status="loaded"
+                class="entered loaded"
+              />
+            </a>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">
+              <a
+                href="https://5sfashion.vn/san-pham/tat-be-gai-5s-fashion-phoi-ke-co-gian-day-dan-g0tat25003"
+              >
+                Tất Bé Gái 5S Fashion Phối Kẻ Co Giãn Dày Dặn G0TAT25003
+              </a>
+            </h3>
+            <div class="product-more">
+              <div class="product-price">30.000đ</div>
+            </div>
+          </div>
+        </div>
+        <div class="item-product-suggest">
+          <div class="product-image">
+            <a
+              href="https://5sfashion.vn/san-pham/tat-cho-be-unisex-5s-fashion-nhieu-mau-k0tat25003"
+            >
+              <img
+                data-src="https://1557691689.e.cdneverest.net/fast/180x0/filters:format(webp)/static.5sfashion.vn/storage/product/H011s03QYQVXoZweIhZiuMt83MipQahm.webp"
+                src="https://1557691689.e.cdneverest.net/fast/180x0/filters:format(webp)/static.5sfashion.vn/storage/product/H011s03QYQVXoZweIhZiuMt83MipQahm.webp"
+                alt="Tất Cho Bé Unisex 5S Fashion Nhiều Màu K0TAT25003"
+                data-ll-status="loaded"
+                class="entered loaded"
+              />
+            </a>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">
+              <a
+                href="https://5sfashion.vn/san-pham/tat-cho-be-unisex-5s-fashion-nhieu-mau-k0tat25003"
+              >
+                Tất Cho Bé Unisex 5S Fashion Nhiều Màu K0TAT25003
+              </a>
+            </h3>
+            <div class="product-more">
+              <div class="product-price">30.000đ</div>
+            </div>
+          </div>
+        </div>
+        <div class="item-product-suggest">
+          <div class="product-image">
+            <a href="https://5sfashion.vn/san-pham/tat-nam-5s-fashion-co-ngan-tron-tat23014">
+              <img
+                data-src="https://1557691689.e.cdneverest.net/fast/180x0/filters:format(webp)/static.5sfashion.vn/storage/product/BjWPmyqyi22I3M6xMT9EeuqzrB1v4PfJ.webp"
+                src="https://1557691689.e.cdneverest.net/fast/180x0/filters:format(webp)/static.5sfashion.vn/storage/product/BjWPmyqyi22I3M6xMT9EeuqzrB1v4PfJ.webp"
+                alt="Tất Nam 5S Fashion Cổ Ngắn Trơn TAT23014"
+                data-ll-status="loaded"
+                class="entered loaded"
+              />
+            </a>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">
+              <a href="https://5sfashion.vn/san-pham/tat-nam-5s-fashion-co-ngan-tron-tat23014">
+                Tất Nam 5S Fashion Cổ Ngắn Trơn TAT23014
+              </a>
+            </h3>
+            <div class="product-more">
+              <div class="product-price">35.000đ</div>
+            </div>
+          </div>
+        </div>
+        <div class="item-product-suggest">
+          <div class="product-image">
+            <a
+              href="https://5sfashion.vn/san-pham/tat-nam-5s-fashion-hoa-tiet-chat-cotton-tat23023"
+            >
+              <img
+                data-src="https://1557691689.e.cdneverest.net/fast/180x0/filters:format(webp)/static.5sfashion.vn/storage/product/CfvjouyFlkD5ddO459nB2JNr4zMXkEGt.webp"
+                src="https://1557691689.e.cdneverest.net/fast/180x0/filters:format(webp)/static.5sfashion.vn/storage/product/CfvjouyFlkD5ddO459nB2JNr4zMXkEGt.webp"
+                alt="Tất Nam 5S Fashion Họa Tiết Chất Cotton TAT23023"
+                data-ll-status="loaded"
+                class="entered loaded"
+              />
+            </a>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">
+              <a
+                href="https://5sfashion.vn/san-pham/tat-nam-5s-fashion-hoa-tiet-chat-cotton-tat23023"
+              >
+                Tất Nam 5S Fashion Họa Tiết Chất Cotton TAT23023
+              </a>
+            </h3>
+            <div class="product-more">
+              <div class="product-price">35.000đ</div>
+            </div>
+          </div>
+        </div>
+        <div class="item-product-suggest">
+          <div class="product-image">
+            <a
+              href="https://5sfashion.vn/san-pham/tat-nam-co-ngan-cotton-5s-fashion-don-gian-tat24123"
+            >
+              <img
+                data-src="https://1557691689.e.cdneverest.net/fast/180x0/filters:format(webp)/static.5sfashion.vn/storage/product/ZARTYk36mKOvHumXbIzMcEd0In23bchX.webp"
+                src="https://1557691689.e.cdneverest.net/fast/180x0/filters:format(webp)/static.5sfashion.vn/storage/product/ZARTYk36mKOvHumXbIzMcEd0In23bchX.webp"
+                alt="Tất Nam Cổ Ngắn Cotton 5S Fashion Đơn Giản TAT24123"
+                data-ll-status="loaded"
+                class="entered loaded"
+              />
+            </a>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">
+              <a
+                href="https://5sfashion.vn/san-pham/tat-nam-co-ngan-cotton-5s-fashion-don-gian-tat24123"
+              >
+                Tất Nam Cổ Ngắn Cotton 5S Fashion Đơn Giản TAT24123
+              </a>
+            </h3>
+            <div class="product-more">
+              <div class="product-price">35.000đ</div>
+            </div>
+          </div>
+        </div>
+        <div class="item-product-suggest">
+          <div class="product-image">
+            <a href="https://5sfashion.vn/san-pham/tat-nam-co-lung-5s-fashion-phoi-det-ke-tat24131">
+              <img
+                data-src="https://1557691689.e.cdneverest.net/fast/180x0/filters:format(webp)/static.5sfashion.vn/storage/product/zMtQWi0lbEimKky9GG79IlnNq0ou1G8b.webp"
+                src="https://1557691689.e.cdneverest.net/fast/180x0/filters:format(webp)/static.5sfashion.vn/storage/product/zMtQWi0lbEimKky9GG79IlnNq0ou1G8b.webp"
+                alt="Tất Nam Cổ Lửng 5S Fashion Phối Dệt Kẻ TAT24131"
+                data-ll-status="loaded"
+                class="entered loaded"
+              />
+            </a>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">
+              <a
+                href="https://5sfashion.vn/san-pham/tat-nam-co-lung-5s-fashion-phoi-det-ke-tat24131"
+              >
+                Tất Nam Cổ Lửng 5S Fashion Phối Dệt Kẻ TAT24131
+              </a>
+            </h3>
+            <div class="product-more">
+              <div class="product-price">35.000đ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="https://5sfashion.vn/search?search=" class="view-all">Xem tất cả</a>
+    </div>
+  </div>
+</div>
+<div class="close-overlay"></div>

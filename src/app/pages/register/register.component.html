@@ -1,0 +1,49 @@
+<form action="">
+  <div class="login">
+    <div class="login-container">
+      <div class="login-panel">
+        <h2>Đăng ký</h2>
+
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            name="username"
+            [(ngModel)]="username"
+            placeholder="Nhập tên"
+            autocomplete="off"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="email">Tài khoản</label>
+          <input
+            type="email"
+            name="email"
+            [(ngModel)]="email"
+            placeholder="Nhập tài khoản"
+            autocomplete="off"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Mật khẩu</label>
+          <input
+            type="password"
+            name="password"
+            [(ngModel)]="password"
+            placeholder="Nhập mật khẩu"
+            required
+          />
+        </div>
+
+        <button (click)="onRegister()" class="btn">Đăng ký</button>
+        <div class="action">
+          <p class="btn-register" (click)="goTo('login')">Đăng nhập</p>
+          <p class="btn-changepass">Quên mật khẩu</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

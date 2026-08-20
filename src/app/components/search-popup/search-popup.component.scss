@@ -1,0 +1,107 @@
+.content-popup {
+  width: 100%; // đã có nzWidth ở modal rồi, không cần 50% ở đây nữa
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  a {
+    text-decoration: none;
+  }
+  .search-form {
+    position: relative;
+    .icon-close {
+      cursor: pointer;
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      svg {
+        vertical-align: middle;
+      }
+    }
+    input {
+      background: #fff;
+      border: 1px solid #d9d9d9;
+      border-radius: 8px;
+      color: #0f0f0f;
+      font-size: 13px;
+      height: 48px;
+      outline: none !important;
+      padding: 12px 45px 12px 12px;
+      width: 100%;
+    }
+  }
+  .suggest-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-top: 8px;
+    max-height: 75vh;
+    overflow-y: auto;
+    padding: 15px 25px;
+    scrollbar-width: none;
+    .title-block {
+      margin-bottom: 15px;
+      span {
+        color: #000;
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+    .product-suggest {
+      .list-product {
+        display: grid;
+        grid-template-columns: 40% 40%;
+        justify-content: space-between;
+        .item-product-suggest {
+          display: flex;
+          margin-bottom: 15px;
+          .product-image {
+            img {
+              width: 80px;
+            }
+          }
+          .product-info {
+            color: #0f0f0f;
+            margin-left: 10px;
+            position: relative;
+            width: calc(100% - 90px);
+            .product-name {
+              a {
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                color: #0f0f0f;
+                display: block;
+                display: -webkit-box;
+                font-size: 14px;
+                font-weight: 600;
+                height: 40px;
+                line-height: 20px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+            }
+            .product-more {
+              margin-top: 5px;
+              .product-price {
+                color: #bf272d;
+                font-size: 16px;
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+      .view-all {
+        background: #ad0000;
+        border-radius: 8px;
+        color: #fff;
+        display: inline-block;
+        font-size: 14px;
+        left: 50%;
+        margin-top: 10px;
+        padding: 4px 17px;
+        position: relative;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

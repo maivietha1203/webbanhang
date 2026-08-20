@@ -1,0 +1,72 @@
+<!-- <h1 class="home-page">home page</h1>
+<div *ngFor="let post of posts">
+  <p>ID: {{ post.id }}</p>
+  <p>{{ post.title }}</p>
+  <p>{{ post.body }}</p>
+</div> -->
+<div class="homepage-body">
+  <nz-carousel
+    [nzEffect]="effect"
+    nzAutoPlay="true"
+    nzAutoPlaySpeed="5000"
+    [nzLoop]="true"
+    nzArrows
+    ngClass="banner"
+  >
+    @for (url of array; track url) {
+      <div nz-carousel-content>
+        <img [src]="url" alt="" />
+      </div>
+    }
+  </nz-carousel>
+</div>
+<div class="service-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-md-3">
+        <a href="">
+          <div class="item-service">
+            <img
+              src="../../../assets/images/service/service-img-1.webp"
+              alt=""
+              class="image-service"
+            />
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-3">
+        <a href="">
+          <div class="item-service">
+            <img
+              src="../../../assets/images/service/service-img-2.webp"
+              alt=""
+              class="image-service"
+            />
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-3">
+        <a href="">
+          <div class="item-service">
+            <img
+              src="../../../assets/images/service/service-img-3.webp"
+              alt=""
+              class="image-service"
+            />
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-3">
+        <a href="">
+          <div class="item-service">
+            <img
+              src="../../../assets/images/service/service-img-4.webp"
+              alt=""
+              class="image-service"
+            />
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
