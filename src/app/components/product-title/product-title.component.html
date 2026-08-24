@@ -1,0 +1,77 @@
+<!-- banner.component.html -->
+
+<div class="product-title-block">
+  <div class="container">
+    <div class="product-title">
+      <h2 class="title">BST Xuân Hè 2026</h2>
+      <a href="https://5sfashion.vn/danh-muc/bst-xuan-he-2026" class="view-all d-none d-md-block"
+        >Xem tất cả</a
+      >
+    </div>
+
+    <div class="product-content">
+      <button type="button" class="owl-prev" (click)="scrollLeft()">
+        <img src="../../../assets/images/ic-prevsl.svg" alt="quay lại" />
+      </button>
+
+      <div class="product-list" #productList>
+        <!-- Sản phẩm 1 -->
+        <div class="product-slider" *ngFor="let item of products">
+          <div class="product-top">
+            <div class="product-image">
+              <a href="">
+                <img [src]="item.image" alt="" />
+              </a>
+            </div>
+            <div *ngIf="item.discount" class="discount">{{ item.discount }}</div>
+            <div class="quick-view">
+              <div class="title">
+                <img src="../../../assets/images/add_shopping_cart2.svg" alt="cart" />
+                <span>Thêm nhanh vào giỏ hàng</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-bottom">
+            <div class="rating-label">
+              <div class="rating">
+                <span class="score">{{ item.rating }}/5</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="19"
+                  height="19"
+                  viewBox="0 0 19 19"
+                  fill="none"
+                >
+                  <path
+                    d="M9.03834 1.10996C9.20914 0.699319 9.79086 0.699318 9.96166 1.10996L12.16 6.39541C12.232 6.56853 12.3948 6.68682 12.5817 6.7018L18.2878 7.15925C18.7311 7.1948 18.9109 7.74805 18.5731 8.03738L14.2257 11.7614C14.0833 11.8834 14.0211 12.0748 14.0646 12.2572L15.3928 17.8253C15.496 18.258 15.0254 18.5999 14.6458 18.3681L9.76063 15.3842C9.60062 15.2865 9.39938 15.2865 9.23937 15.3842L4.35417 18.3681C3.97462 18.5999 3.50399 18.258 3.60718 17.8253L4.9354 12.2572C4.9789 12.0748 4.91672 11.8834 4.77432 11.7614L0.426885 8.03738C0.0891163 7.74805 0.268879 7.1948 0.712206 7.15925L6.41829 6.7018C6.60519 6.68682 6.76799 6.56853 6.84 6.39541L9.03834 1.10996Z"
+                    fill="#F6A733"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <div class="product-name">
+              <a href=""
+                ><h3>
+                  {{ item.name }}
+                </h3></a
+              >
+            </div>
+            <div class="price-product">
+              <div class="current-price">{{ item.currentPrice }}</div>
+              <div class="regular-price">{{ item.regularPrice }}</div>
+            </div>
+            <div class="process-product">
+              <div class="title">
+                <b>{{ item.sold }}</b> sản phẩm đã bán
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="owl-next" (click)="scrollRight()">
+        <img src="../../../assets/images/ic-nextsl.svg" alt="tiếp tục" />
+      </button>
+    </div>
+  </div>
+</div>

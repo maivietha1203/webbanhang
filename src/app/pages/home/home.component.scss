@@ -1,3 +1,9 @@
+.homepage-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 113px;
+}
 .banner {
   height: 561px;
 }
@@ -5,16 +11,5 @@
 [nz-carousel-content] {
   img {
     height: 561px !important;
-  }
-}
-//service
-.service-block {
-  background: #fafafa;
-  padding: 30px 0;
-
-  .container {
-    max-width: 720px;
-    .row {
-    }
   }
 }

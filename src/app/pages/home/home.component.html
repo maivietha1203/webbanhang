@@ -20,53 +20,25 @@
     }
   </nz-carousel>
 </div>
-<div class="service-block">
-  <div class="container">
-    <div class="row">
-      <div class="col-6 col-md-3">
-        <a href="">
-          <div class="item-service">
-            <img
-              src="../../../assets/images/service/service-img-1.webp"
-              alt=""
-              class="image-service"
-            />
-          </div>
-        </a>
-      </div>
-      <div class="col-6 col-md-3">
-        <a href="">
-          <div class="item-service">
-            <img
-              src="../../../assets/images/service/service-img-2.webp"
-              alt=""
-              class="image-service"
-            />
-          </div>
-        </a>
-      </div>
-      <div class="col-6 col-md-3">
-        <a href="">
-          <div class="item-service">
-            <img
-              src="../../../assets/images/service/service-img-3.webp"
-              alt=""
-              class="image-service"
-            />
-          </div>
-        </a>
-      </div>
-      <div class="col-6 col-md-3">
-        <a href="">
-          <div class="item-service">
-            <img
-              src="../../../assets/images/service/service-img-4.webp"
-              alt=""
-              class="image-service"
-            />
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+<service-block-component></service-block-component>
+<voucher-block-component></voucher-block-component>
+
+<app-product-tab [products]="bestSellerProducts"></app-product-tab>
+<banner-block-component [banner]="banner1"></banner-block-component>
+<app-product-title [products]="bestSellerProducts"></app-product-title>
+<banner-block-component [banner]="banner2"></banner-block-component>
+
+<app-product-title [products]="springSummerProducts"></app-product-title>
+<banner-block-component [banner]="banner3"></banner-block-component>
+
+<app-product-title [products]="cuteSetProducts"></app-product-title>
+<banner-block-component [banner]="banner4"></banner-block-component>
+
+<app-product-title [products]="activeWearProducts"></app-product-title>
+<banner-block-component [banner]="banner5"></banner-block-component>
+
+<app-product-title [products]="officeWearProducts"></app-product-title>
+<banner-col-block-component [banner]="banner"> </banner-col-block-component>
+<news-block-component></news-block-component>
+<customer-col-block-component></customer-col-block-component>
+<location-block-component [banner]="banner6"></location-block-component>

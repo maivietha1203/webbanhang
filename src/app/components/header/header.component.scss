@@ -1,12 +1,15 @@
 .header-5s {
   background: #fff;
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 99;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
   .header-top {
     background: #bf272d;
     color: #fff;
     padding: 8px 0;
+    width: 100%;
     .container {
       align-items: center;
       display: flex;

@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'https://jsonplaceholder.typicode.com',
+  apiUrl: 'https://fjnjgpsl-8081.asse.devtunnels.ms/api/v1',
 };

@@ -18,11 +18,12 @@ export class RegisterComponent {
     this.router.navigate([path]);
   }
   onRegister() {
-    console.log({
-      email: this.email,
-      password: this.password,
-      username: this.username,
-    });
+    // console.log();
+    //   email: this.email,
+    //   password: this.password,
+    //   username: this.username,
+    //    }
+    // });
     this.router.navigate(['/login']);
   }
 }

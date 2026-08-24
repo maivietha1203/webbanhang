@@ -4,7 +4,7 @@ import { ApiService } from '../../core/services/api.service';
 @Injectable({ providedIn: 'root' })
 export class ProductService extends ApiService {
   getAll() {
-    return this.get<any[]>('posts');
+    return this.get<any[]>('products');
   }
 
   getById(id: number) {
