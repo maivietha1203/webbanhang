@@ -1,11 +1,11 @@
-<form action="">
+<form (ngSubmit)="onRegister()">
   <div class="login">
     <div class="login-container">
       <div class="login-panel">
         <h2>Đăng ký</h2>
 
         <div class="input-group">
-          <label for="username">Username</label>
+          <label>Username</label>
           <input
             type="text"
             name="username"
@@ -15,8 +15,9 @@
             required
           />
         </div>
+
         <div class="input-group">
-          <label for="email">Tài khoản</label>
+          <label>Tài khoản</label>
           <input
             type="email"
             name="email"
@@ -28,7 +29,7 @@
         </div>
 
         <div class="input-group">
-          <label for="password">Mật khẩu</label>
+          <label>Mật khẩu</label>
           <input
             type="password"
             name="password"
@@ -38,7 +39,21 @@
           />
         </div>
 
-        <button (click)="onRegister()" class="btn">Đăng ký</button>
+        <div class="input-group">
+          <label>Role</label>
+          <select name="role" [(ngModel)]="role" required>
+            <option [ngValue]="0">Admin</option>
+            <option [ngValue]="1">Customer</option>
+            <option [ngValue]="2">Staff</option>
+          </select>
+        </div>
+
+        <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+        <button type="submit" class="btn" [disabled]="isLoading">
+          {{ isLoading ? 'Đang đăng ký...' : 'Đăng ký' }}
+        </button>
+
         <div class="action">
           <p class="btn-register" (click)="goTo('login')">Đăng nhập</p>
           <p class="btn-changepass">Quên mật khẩu</p>

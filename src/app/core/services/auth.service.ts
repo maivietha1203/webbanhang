@@ -1,11 +1,28 @@
 import { Injectable, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { Observable, tap, catchError, of } from 'rxjs';
+import { Observable, tap, catchError, of, map } from 'rxjs';
 import { ApiService } from './api.service';
+
+export interface ApiResponse<T> {
+  timestamp: string;
+  success: boolean;
+  message: string;
+  data: T;
+}
 
 export interface AuthResponse {
   accessToken: string;
   refreshToken: string;
+  tokenType?: string;
+  expiresIn?: number;
+  user?: {
+    id: string;
+    username: string;
+    email: string;
+    role: string;
+    status: string;
+    emailVerified: boolean;
+  };
 }
 
 export interface RefreshResponse {
@@ -17,45 +34,50 @@ export interface RegisterRequest {
   username: string;
   email: string;
   password: string;
-  role?: string;
+  role?: number; // 0 = admin, 1 = customer, 2 = staff
 }
 
 export interface LoginRequest {
-  email: string;
+  usernameOrEmail: string;
   password: string;
 }
 
 @Injectable({ providedIn: 'root' })
-//kế thừa api sevit
 export class AuthService extends ApiService {
   private platformId = inject(PLATFORM_ID);
 
   private readonly authPrefix = 'auth';
 
   login(payload: LoginRequest): Observable<AuthResponse> {
-    return this.post<AuthResponse>(`${this.authPrefix}/login`, payload).pipe(
-      tap((res) => this.setTokens(res.accessToken, res.refreshToken)),
+    return this.post<ApiResponse<AuthResponse>>(`${this.authPrefix}/login`, payload).pipe(
+      map((res) => res.data),
+      tap((data) => this.setTokens(data.accessToken, data.refreshToken)),
     );
   }
 
   register(payload: RegisterRequest): Observable<AuthResponse> {
-    return this.post<AuthResponse>(`${this.authPrefix}/register`, payload).pipe(
-      tap((res) => this.setTokens(res.accessToken, res.refreshToken)),
+    return this.post<ApiResponse<AuthResponse>>(`${this.authPrefix}/register`, payload).pipe(
+      map((res) => res.data),
+      tap((data) => this.setTokens(data.accessToken, data.refreshToken)),
     );
   }
 
   refreshToken(): Observable<RefreshResponse> {
     const refreshToken = this.getRefreshToken();
 
-    return this.post<RefreshResponse>(`${this.authPrefix}/refresh`, { refreshToken }).pipe(
-      tap((res) => this.setTokens(res.accessToken, res.refreshToken ?? refreshToken!)),
+    return this.post<ApiResponse<RefreshResponse>>(`${this.authPrefix}/refresh`, {
+      refreshToken,
+    }).pipe(
+      map((res) => res.data),
+      tap((data) => this.setTokens(data.accessToken, data.refreshToken ?? refreshToken!)),
     );
   }
 
   logout(): Observable<void> {
     const refreshToken = this.getRefreshToken();
 
-    return this.post<void>(`${this.authPrefix}/logout`, { refreshToken }).pipe(
+    return this.post<ApiResponse<void>>(`${this.authPrefix}/logout`, { refreshToken }).pipe(
+      map(() => void 0),
       tap(() => this.clearTokens()),
       catchError(() => {
         this.clearTokens();
