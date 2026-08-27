@@ -30,6 +30,15 @@
         position: relative;
         top: -1px;
       }
+
+      // Animation trượt cho nút — giữ nguyên translateY(-50%) để không bị lệch giữa
+      &.slide-from-left {
+        animation: btnSlideFromLeft 0.6s ease;
+      }
+
+      &.slide-from-right {
+        animation: btnSlideFromRight 0.6s ease;
+      }
     }
 
     .owl-prev {
@@ -46,6 +55,28 @@
       img {
         left: 1px;
       }
+    }
+  }
+
+  @keyframes btnSlideFromLeft {
+    from {
+      opacity: 0;
+      transform: translate(-1000px, -50%); // kết hợp cả trượt ngang lẫn căn giữa dọc
+    }
+    to {
+      opacity: 1;
+      transform: translate(0, -50%);
+    }
+  }
+
+  @keyframes btnSlideFromRight {
+    from {
+      opacity: 0;
+      transform: translate(1000px, -50%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0, -50%);
     }
   }
 
@@ -99,7 +130,7 @@
     scrollbar-width: none;
     width: 100%;
     gap: 16px;
-    flex-wrap: nowrap; // thêm dòng này, đảm bảo không bao giờ wrap
+    flex-wrap: nowrap;
 
     &::-webkit-scrollbar {
       display: none;
@@ -118,6 +149,35 @@
       &:last-child {
         margin-right: 0;
       }
+    }
+    &.slide-from-left {
+      animation: slideFromLeft 0.6s ease;
+    }
+
+    &.slide-from-right {
+      animation: slideFromRight 0.6s ease;
+    }
+  }
+
+  @keyframes slideFromLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-1000px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideFromRight {
+    from {
+      opacity: 0;
+      transform: translateX(1000px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 
@@ -328,12 +388,12 @@
 
 @media (max-width: 1199px) {
   .product-tab-block .product-slider {
-    flex: 0 0 calc(33.333% - 11px); // tablet: 3 sản phẩm/khung nhìn
+    flex: 0 0 calc(33.333% - 11px);
   }
 }
 
 @media (max-width: 767px) {
   .product-tab-block .product-slider {
-    flex: 0 0 calc(50% - 8px); // mobile: 2 sản phẩm/khung nhìn
+    flex: 0 0 calc(50% - 8px);
   }
 }

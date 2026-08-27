@@ -1,6 +1,8 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 
+type TabKey = 'bestseller' | 'discount';
+
 @Component({
   selector: 'app-product-tab',
   standalone: true,
@@ -9,8 +11,29 @@ import { CommonModule, NgFor, NgIf } from '@angular/common';
   styleUrl: './product-tab.component.scss',
 })
 export class ProductTabComponent {
-  @Input() products: any[] = [];
+  @Input() products: any[] = []; // danh sách "Bán chạy nhất"
+  @Input() discountProducts: any[] = []; // danh sách "Giảm giá nhiều nhất"
+
   @ViewChild('productList') productListRef!: ElementRef<HTMLElement>;
+
+  activeTab: TabKey = 'bestseller';
+  slideDirection: 'left' | 'right' = 'left';
+
+  get displayedProducts(): any[] {
+    return this.activeTab === 'bestseller' ? this.products : this.discountProducts;
+  }
+
+  switchTab(tab: TabKey): void {
+    if (tab === this.activeTab) return;
+
+    this.slideDirection = tab === 'discount' ? 'right' : 'left';
+    this.activeTab = tab;
+
+    // reset về đầu danh sách khi đổi tab, tránh giữ vị trí scroll cũ của tab trước
+    queueMicrotask(() => {
+      this.productListRef?.nativeElement.scrollTo({ left: 0, behavior: 'auto' });
+    });
+  }
 
   private getItems(): HTMLElement[] {
     return Array.from(
@@ -23,7 +46,6 @@ export class ProductTabComponent {
     const items = this.getItems();
     const currentScroll = el.scrollLeft;
 
-    // tìm item đầu tiên nằm ngoài khung nhìn bên phải hiện tại
     const nextItem = items.find((item) => item.offsetLeft > currentScroll + 5);
     if (nextItem) {
       el.scrollTo({ left: nextItem.offsetLeft, behavior: 'smooth' });
@@ -35,7 +57,6 @@ export class ProductTabComponent {
     const items = this.getItems();
     const currentScroll = el.scrollLeft;
 
-    // tìm item cuối cùng nằm trước vị trí hiện tại
     const prevItems = items.filter((item) => item.offsetLeft < currentScroll - 5);
     const prevItem = prevItems[prevItems.length - 1];
     if (prevItem) {

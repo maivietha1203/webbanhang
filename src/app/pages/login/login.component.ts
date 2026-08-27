@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../core/services/auth.service'; // sửa path đúng theo project của bạn
 import { NgIf } from '@angular/common';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -31,7 +31,8 @@ export class LoginComponent {
     this.isLoading = true;
     this.errorMessage = '';
     this.authService.login({ usernameOrEmail: this.email, password: this.password }).subscribe({
-      next: () => {
+      next: (res) => {
+        console.log(res.message); // "Login successful" — lấy được luôn
         this.isLoading = false;
         this.router.navigate(['/']);
       },

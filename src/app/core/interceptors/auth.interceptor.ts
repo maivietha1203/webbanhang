@@ -1,29 +1,41 @@
-import { inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-import { HttpInterceptorFn, HttpErrorResponse } from '@angular/common/http';
-import { catchError, filter, switchMap, take, throwError } from 'rxjs';
-import { BehaviorSubject } from 'rxjs';
+import { HttpErrorResponse, HttpInterceptorFn, HttpRequest } from '@angular/common/http';
+import { inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { BehaviorSubject, catchError, filter, switchMap, take, throwError } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 
 let isRefreshing = false;
 const refreshTokenSubject = new BehaviorSubject<string | null>(null);
 
+const AUTH_EXCLUDE_PATHS = ['/auth/login', '/auth/register', '/auth/refresh'];
+
+function isExcluded(url: string): boolean {
+  return AUTH_EXCLUDE_PATHS.some((path) => url.includes(path));
+}
+
+function addToken(req: HttpRequest<unknown>, token: string): HttpRequest<unknown> {
+  return req.clone({
+    setHeaders: { Authorization: `Bearer ${token}` },
+  });
+}
+
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
-  const platformId = inject(PLATFORM_ID);
   const authService = inject(AuthService);
   const router = inject(Router);
 
-  let token: string | null = null;
-  if (isPlatformBrowser(platformId)) {
-    token = localStorage.getItem('token');
-  }
-
-  const authReq = token ? req.clone({ setHeaders: { Authorization: `Bearer ${token}` } }) : req;
+  const token = authService.getToken();
+  const authReq = token && !isExcluded(req.url) ? addToken(req, token) : req;
 
   return next(authReq).pipe(
     catchError((error: HttpErrorResponse) => {
-      if (error.status !== 401 || req.url.includes('/auth/')) {
+      if (error.status !== 401 || isExcluded(req.url)) {
+        return throwError(() => error);
+      }
+
+      const refreshToken = authService.getRefreshToken();
+      if (!refreshToken) {
+        authService.clearTokens();
+        router.navigate(['/login']);
         return throwError(() => error);
       }
 
@@ -31,45 +43,27 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
         isRefreshing = true;
         refreshTokenSubject.next(null);
 
-        return authService.refreshToken().pipe(
+        return authService.refreshToken(refreshToken).pipe(
           switchMap((res) => {
             isRefreshing = false;
-            const newToken = res.accessToken;
-
-            authService.setTokens(newToken, res.refreshToken ?? authService.getRefreshToken()!);
-            refreshTokenSubject.next(newToken);
-
-            const retryReq = req.clone({
-              setHeaders: { Authorization: `Bearer ${newToken}` },
-            });
-            return next(retryReq);
+            authService.setTokens(res.data.accessToken, res.data.refreshToken);
+            refreshTokenSubject.next(res.data.accessToken);
+            return next(addToken(req, res.data.accessToken));
           }),
           catchError((refreshError) => {
             isRefreshing = false;
             authService.clearTokens();
             router.navigate(['/login']);
-
-            refreshTokenSubject.next(null);
-
             return throwError(() => refreshError);
           }),
         );
-      } else {
-        return refreshTokenSubject.pipe(
-          filter((t) => t !== null || !isRefreshing),
-          take(1),
-          switchMap((newToken) => {
-            if (!newToken) {
-              return throwError(() => error);
-            }
-
-            const retryReq = req.clone({
-              setHeaders: { Authorization: `Bearer ${newToken}` },
-            });
-            return next(retryReq);
-          }),
-        );
       }
+
+      return refreshTokenSubject.pipe(
+        filter((newToken) => newToken !== null),
+        take(1),
+        switchMap((newToken) => next(addToken(req, newToken as string))),
+      );
     }),
   );
 };

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../../features/product/product.service';
 import { Post } from '../../models/post.model';
 import { NgFor, NgClass } from '@angular/common';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
@@ -36,7 +35,7 @@ import { LocationComponent } from '../../components/location-block/location-bloc
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  constructor(private productService: ProductService) {}
+  // constructor(private productService: ProductService) {}
   posts: Post[] = [];
   effect = 'scrollx';
   // array = [1, 2, 3, 4];
@@ -371,6 +370,80 @@ export class HomeComponent {
     {
       image: '../../../assets/images/product-1.webp',
       discount: '',
+      name: 'Áo Thun Nam Cotton Basic',
+      currentPrice: '159.000đ',
+      regularPrice: '199.000đ',
+      sold: 210,
+      rating: 4.9,
+    },
+    {
+      image: '../../../assets/images/product-1.webp',
+      discount: '-10%',
+      name: 'Áo Khoác Gió 2 Lớp Chống Nước',
+      currentPrice: '359.000đ',
+      regularPrice: '399.000đ',
+      sold: 45,
+      rating: 4.7,
+    },
+    {
+      image: '../../../assets/images/product-1.webp',
+      discount: '-10%',
+      name: 'Áo Khoác Gió 2 Lớp Chống Nước',
+      currentPrice: '359.000đ',
+      regularPrice: '399.000đ',
+      sold: 45,
+      rating: 4.7,
+    },
+    {
+      image: '../../../assets/images/product-1.webp',
+      discount: '-10%',
+      name: 'Áo Khoác Gió 2 Lớp Chống Nước',
+      currentPrice: '359.000đ',
+      regularPrice: '399.000đ',
+      sold: 45,
+      rating: 4.7,
+    },
+    {
+      image: '../../../assets/images/product-1.webp',
+      discount: '-10%',
+      name: 'Áo Khoác Gió 2 Lớp Chống Nước',
+      currentPrice: '359.000đ',
+      regularPrice: '399.000đ',
+      sold: 45,
+      rating: 4.7,
+    },
+  ];
+  saleProducts: Product[] = [
+    {
+      image: '../../../assets/images/product-1.webp',
+      discount: '-50%',
+      name: 'Áo Polo Nam AIR-COOL 5S Fashion Phong Cách Thể Thao Khỏe Khoắn',
+      currentPrice: '229.000đ',
+      regularPrice: '309.000đ',
+      sold: 84,
+      rating: 5,
+    },
+    {
+      image: '../../../assets/images/product-1.webp',
+      discount: '-50%',
+      name: 'Quần Jean Nam Slimfit Basic Form Ôm Vừa',
+      currentPrice: '399.000đ',
+      regularPrice: '469.000đ',
+      sold: 152,
+      rating: 4.8,
+    },
+    {
+      image: '../../../assets/images/product-1.webp',
+      discount: '50%',
+      name: 'Áo Sơ Mi Dài Tay Kẻ Sọc Nhẹ',
+      currentPrice: '259.000đ',
+      regularPrice: '339.000đ',
+      sold: 61,
+      rating: 5,
+    },
+    {
+      image: '../../../assets/images/product-1.webp',
+      discount: '50%',
       name: 'Áo Thun Nam Cotton Basic',
       currentPrice: '159.000đ',
       regularPrice: '199.000đ',

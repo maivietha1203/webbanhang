@@ -1,114 +1,66 @@
-import { Injectable, inject, PLATFORM_ID } from '@angular/core';
+// src/app/core/services/auth.service.ts
+import { Injectable, PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { Observable, tap, catchError, of, map } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { ApiService } from './api.service';
-
-export interface ApiResponse<T> {
-  timestamp: string;
-  success: boolean;
-  message: string;
-  data: T;
-}
-
-export interface AuthResponse {
-  accessToken: string;
-  refreshToken: string;
-  tokenType?: string;
-  expiresIn?: number;
-  user?: {
-    id: string;
-    username: string;
-    email: string;
-    role: string;
-    status: string;
-    emailVerified: boolean;
-  };
-}
-
-export interface RefreshResponse {
-  accessToken: string;
-  refreshToken?: string;
-}
-
-export interface RegisterRequest {
-  username: string;
-  email: string;
-  password: string;
-  role?: number; // 0 = admin, 1 = customer, 2 = staff
-}
-
-export interface LoginRequest {
-  usernameOrEmail: string;
-  password: string;
-}
+import {
+  LoginRequest,
+  LoginResponse,
+  RegisterRequest,
+  RegisterResponse,
+} from '../../models/auth.model';
+import { ApiResponse } from '../../models/api-response.model';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService extends ApiService {
+  protected override prefix = 'auth';
   private platformId = inject(PLATFORM_ID);
 
-  private readonly authPrefix = 'auth';
-
-  login(payload: LoginRequest): Observable<AuthResponse> {
-    return this.post<ApiResponse<AuthResponse>>(`${this.authPrefix}/login`, payload).pipe(
-      map((res) => res.data),
-      tap((data) => this.setTokens(data.accessToken, data.refreshToken)),
+  login(payload: LoginRequest): Observable<ApiResponse<LoginResponse>> {
+    return this.post<LoginResponse>('login', payload).pipe(
+      tap((res) => this.setTokens(res.data.accessToken, res.data.refreshToken)),
+      //                        ^^^^^^^^                ^^^^^^^^ phải thêm .data
     );
   }
 
-  register(payload: RegisterRequest): Observable<AuthResponse> {
-    return this.post<ApiResponse<AuthResponse>>(`${this.authPrefix}/register`, payload).pipe(
-      map((res) => res.data),
-      tap((data) => this.setTokens(data.accessToken, data.refreshToken)),
-    );
+  register(payload: RegisterRequest): Observable<ApiResponse<RegisterResponse>> {
+    return this.post<RegisterResponse>('register', payload);
   }
 
-  refreshToken(): Observable<RefreshResponse> {
+  refreshToken(
+    refreshToken: string,
+  ): Observable<ApiResponse<{ accessToken: string; refreshToken: string }>> {
+    return this.post('refresh', { refreshToken });
+  }
+
+  logout(): Observable<ApiResponse<void>> {
     const refreshToken = this.getRefreshToken();
-
-    return this.post<ApiResponse<RefreshResponse>>(`${this.authPrefix}/refresh`, {
-      refreshToken,
-    }).pipe(
-      map((res) => res.data),
-      tap((data) => this.setTokens(data.accessToken, data.refreshToken ?? refreshToken!)),
-    );
-  }
-
-  logout(): Observable<void> {
-    const refreshToken = this.getRefreshToken();
-
-    return this.post<ApiResponse<void>>(`${this.authPrefix}/logout`, { refreshToken }).pipe(
-      map(() => void 0),
+    return this.post<void>('logout', refreshToken ? { refreshToken } : {}).pipe(
       tap(() => this.clearTokens()),
-      catchError(() => {
-        this.clearTokens();
-        return of(void 0);
-      }),
     );
-  }
-
-  isLoggedIn(): boolean {
-    return !!this.getToken();
-  }
-
-  getToken(): string | null {
-    if (!isPlatformBrowser(this.platformId)) return null;
-    return localStorage.getItem('token');
-  }
-
-  getRefreshToken(): string | null {
-    if (!isPlatformBrowser(this.platformId)) return null;
-    return localStorage.getItem('refreshToken');
   }
 
   setTokens(accessToken: string, refreshToken: string): void {
     if (!isPlatformBrowser(this.platformId)) return;
-    localStorage.setItem('token', accessToken);
+    localStorage.setItem('accessToken', accessToken);
     localStorage.setItem('refreshToken', refreshToken);
+  }
+
+  getToken(): string | null {
+    return isPlatformBrowser(this.platformId) ? localStorage.getItem('accessToken') : null;
+  }
+
+  getRefreshToken(): string | null {
+    return isPlatformBrowser(this.platformId) ? localStorage.getItem('refreshToken') : null;
   }
 
   clearTokens(): void {
     if (!isPlatformBrowser(this.platformId)) return;
-    localStorage.removeItem('token');
+    localStorage.removeItem('accessToken');
     localStorage.removeItem('refreshToken');
+  }
+
+  isLoggedIn(): boolean {
+    return !!this.getToken();
   }
 }

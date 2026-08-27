@@ -23,7 +23,10 @@
 <service-block-component></service-block-component>
 <voucher-block-component></voucher-block-component>
 
-<app-product-tab [products]="bestSellerProducts"></app-product-tab>
+<app-product-tab
+  [products]="bestSellerProducts"
+  [discountProducts]="saleProducts"
+></app-product-tab>
 <banner-block-component [banner]="banner1"></banner-block-component>
 <app-product-title [products]="bestSellerProducts"></app-product-title>
 <banner-block-component [banner]="banner2"></banner-block-component>
