@@ -1,4 +1,3 @@
-// src/app/core/services/api.service.ts
 import { HttpClient, HttpParams, HttpContext } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -29,7 +28,6 @@ export abstract class ApiService {
     return httpParams;
   }
 
-  // Không còn map((res) => res.data) nữa — trả nguyên envelope luôn
   protected get<T>(
     path: string,
     params?: Record<string, any>,

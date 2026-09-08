@@ -24,7 +24,7 @@
               </a>
             </div>
             <div *ngIf="item.discount" class="discount">{{ item.discount }}</div>
-            <div class="quick-view">
+            <div class="quick-view" (click)="showSearchProduct()">
               <div class="title">
                 <img src="../../../assets/images/add_shopping_cart2.svg" alt="cart" />
                 <span>Thêm nhanh vào giỏ hàng</span>
@@ -32,6 +32,62 @@
             </div>
           </div>
           <div class="product-bottom">
+            <div class="variant-block">
+              <ul class="variant-list">
+                <li
+                  /* data-color="Nâu" */
+                  /* data-img="https://1557691689.e.cdneverest.net/fast/747x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/43c4vlV6AV6APGE34ZDMqzhnW2FFcaTB.webp" */
+                  class="variant-item current"
+                >
+                  <img
+                    /* data-src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/43c4vlV6AV6APGE34ZDMqzhnW2FFcaTB.webp" */
+                    src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/43c4vlV6AV6APGE34ZDMqzhnW2FFcaTB.webp"
+                    alt="Nâu"
+                  />
+                </li>
+                <li
+                  /* data-color="Xanh tím than" */
+                  /* data-img="https://1557691689.e.cdneverest.net/fast/747x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/mqeL3sikULjqFKKGQwOiWSUldjB9gkvT.webp" */
+                  class="variant-item"
+                >
+                  <img
+                    /* data-src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/mqeL3sikULjqFKKGQwOiWSUldjB9gkvT.webp" */
+                    src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/mqeL3sikULjqFKKGQwOiWSUldjB9gkvT.webp"
+                    alt="Xanh tím than"
+                  />
+                </li>
+                <li
+                  /* data-color="Trắng"
+                    data-img="https://1557691689.e.cdneverest.net/fast/747x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/PEbhf6hg0A8KlJlhfPe4UPEhGkhoXHsw.webp" */
+                  class="variant-item"
+                >
+                  <img
+                    src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/PEbhf6hg0A8KlJlhfPe4UPEhGkhoXHsw.webp"
+                    alt="Trắng"
+                  />
+                </li>
+                <li
+                  /* data-color="Xanh xám" */
+                  /* data-img="https://1557691689.e.cdneverest.net/fast/747x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/yybqdBZGPNNE5G2HlK2umeU4vwzsGNIm.webp" */
+                  class="variant-item"
+                >
+                  <img
+                    src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/yybqdBZGPNNE5G2HlK2umeU4vwzsGNIm.webp"
+                    alt="Xanh xám"
+                  />
+                </li>
+                <li
+                  /* data-color="Be nhạt" */
+                  /* data-img="https://1557691689.e.cdneverest.net/fast/747x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/evPqDIBqlfn1aUdYL0b7no6r2T2RjlF5.webp" */
+                  class="variant-item"
+                >
+                  <img
+                    src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/evPqDIBqlfn1aUdYL0b7no6r2T2RjlF5.webp"
+                    alt="Be nhạt"
+                  />
+                </li>
+              </ul>
+            </div>
             <div class="rating-label">
               <div class="rating">
                 <span class="score">{{ item.rating }}/5</span>
@@ -50,11 +106,11 @@
               </div>
             </div>
             <div class="product-name">
-              <a href=""
-                ><h3>
+              <div class="name-wrapper">
+                <h3 (click)="onSelectItem(item)">
                   {{ item.name }}
-                </h3></a
-              >
+                </h3>
+              </div>
             </div>
             <div class="price-product">
               <div class="current-price">{{ item.currentPrice }}</div>
@@ -75,3 +131,16 @@
     </div>
   </div>
 </div>
+<nz-modal
+  [(nzVisible)]="isShowPopup"
+  [nzFooter]="null"
+  [nzClosable]="false"
+  [nzCentered]="true"
+  nzWidth="65%"
+  nzClassName="search-product"
+  (nzOnCancel)="handleMuzzle()"
+>
+  <ng-container *nzModalContent>
+    <product-popup-layout (closeProductPopup)="handleMuzzle()"></product-popup-layout>
+  </ng-container>
+</nz-modal>

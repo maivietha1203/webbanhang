@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, NgIf],
+  imports: [FormsModule, NgIf, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
@@ -20,6 +20,7 @@ export class LoginComponent {
   constructor(
     private router: Router,
     private authService: AuthService,
+    private cdr: ChangeDetectorRef,
   ) {}
 
   onLogin(): void {
@@ -32,18 +33,14 @@ export class LoginComponent {
     this.errorMessage = '';
     this.authService.login({ usernameOrEmail: this.email, password: this.password }).subscribe({
       next: (res) => {
-        console.log(res.message); // "Login successful" — lấy được luôn
         this.isLoading = false;
         this.router.navigate(['/']);
       },
       error: (err) => {
         this.isLoading = false;
         this.errorMessage = err?.error?.message ?? 'Sai tài khoản hoặc mật khẩu';
+        this.cdr.markForCheck();
       },
     });
-  }
-
-  goTo(path: string): void {
-    this.router.navigate([path]);
   }
 }

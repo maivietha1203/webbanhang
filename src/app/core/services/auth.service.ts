@@ -19,7 +19,6 @@ export class AuthService extends ApiService {
   login(payload: LoginRequest): Observable<ApiResponse<LoginResponse>> {
     return this.post<LoginResponse>('login', payload).pipe(
       tap((res) => this.setTokens(res.data.accessToken, res.data.refreshToken)),
-      //                        ^^^^^^^^                ^^^^^^^^ phải thêm .data
     );
   }
 

@@ -27,14 +27,12 @@
       </div>
 
       <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
-
-      <button type="submit" class="btn" (click)="onLogin()" [disabled]="isLoading">
+      <button type="button" class="btn" (click)="onLogin()" [disabled]="isLoading">
         {{ isLoading ? 'Đang đăng nhập...' : 'Đăng nhập' }}
       </button>
 
       <div class="action">
-        <p class="btn-register" (click)="goTo('register')">Đăng ký ngay</p>
-        <p class="btn-changepass">Quên mật khẩu</p>
+        <p class="btn-register" routerLink="/register">Đăng ký ngay</p>
       </div>
     </div>
   </div>

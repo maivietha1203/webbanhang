@@ -10,7 +10,18 @@ ul {
   padding: 0;
   margin: 0;
 }
-
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+}
 // src/styles.scss
 // .search-modal {
 //   .ant-modal-content {

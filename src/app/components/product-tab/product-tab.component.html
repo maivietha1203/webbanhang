@@ -44,7 +44,7 @@
                 </a>
               </div>
               <div *ngIf="item.discount" class="discount">{{ item.discount }}</div>
-              <div class="quick-view">
+              <div class="quick-view" (click)="showSearchProduct()">
                 <div class="title">
                   <img src="../../../assets/images/add_shopping_cart2.svg" alt="cart" />
                   <span>Thêm nhanh vào giỏ hàng</span>
@@ -52,6 +52,40 @@
               </div>
             </div>
             <div class="product-bottom">
+              <div class="variant-block">
+                <ul class="variant-list">
+                  <li class="variant-item current">
+                    <img
+                      src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/43c4vlV6AV6APGE34ZDMqzhnW2FFcaTB.webp"
+                      alt="Nâu"
+                    />
+                  </li>
+                  <li class="variant-item">
+                    <img
+                      src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/mqeL3sikULjqFKKGQwOiWSUldjB9gkvT.webp"
+                      alt="Xanh tím than"
+                    />
+                  </li>
+                  <li class="variant-item">
+                    <img
+                      src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/PEbhf6hg0A8KlJlhfPe4UPEhGkhoXHsw.webp"
+                      alt="Trắng"
+                    />
+                  </li>
+                  <li class="variant-item">
+                    <img
+                      src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/yybqdBZGPNNE5G2HlK2umeU4vwzsGNIm.webp"
+                      alt="Xanh xám"
+                    />
+                  </li>
+                  <li class="variant-item">
+                    <img
+                      src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/evPqDIBqlfn1aUdYL0b7no6r2T2RjlF5.webp"
+                      alt="Be nhạt"
+                    />
+                  </li>
+                </ul>
+              </div>
               <div class="rating-label">
                 <div class="rating">
                   <span class="score">{{ item.rating }}/5</span>
@@ -70,11 +104,11 @@
                 </div>
               </div>
               <div class="product-name">
-                <a href=""
-                  ><h3>
+                <div class="name-item" routerLink="/detail">
+                  <h3>
                     {{ item.name }}
-                  </h3></a
-                >
+                  </h3>
+                </div>
               </div>
               <div class="price-product">
                 <div class="current-price">{{ item.currentPrice }}</div>
@@ -102,3 +136,17 @@
     </div>
   </div>
 </div>
+<nz-modal
+  [(nzVisible)]="isShowPopup"
+  [nzFooter]="null"
+  [nzClosable]="false"
+  [nzCentered]="true"
+  nzWidth="65%"
+  nzClassName="search-product"
+  (nzOnCancel)="handleMuzzle()"
+>
+  <ng-container *nzModalContent>
+    <!-- <search-popup-layout (closePopup)="handleCancel()"></search-popup-layout> -->
+    <product-popup-layout (closeProductPopup)="handleMuzzle()"></product-popup-layout>
+  </ng-container>
+</nz-modal>

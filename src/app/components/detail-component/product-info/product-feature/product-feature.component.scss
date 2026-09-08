@@ -1,0 +1,36 @@
+.product-feature {
+  .title {
+    color: #0f0f0f;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 25px;
+  }
+  .list-feature {
+    .item-feature {
+      margin-bottom: 10px;
+      .label {
+        color: #0f0f0f;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        padding-left: 25px;
+        position: relative;
+        &::before {
+          background: #0f0f0f;
+          border-radius: 50%;
+          content: '';
+          height: 4px;
+          left: 8px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 4px;
+        }
+      }
+      .desc {
+        color: #444;
+        font-size: 14px;
+      }
+    }
+  }
+}

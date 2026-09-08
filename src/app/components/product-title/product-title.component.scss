@@ -152,7 +152,6 @@
                 color: #fff;
                 font-size: 14px;
                 font-weight: 600;
-                background: rgba(173, 0, 0, 0.8);
 
                 img {
                   width: 18px;
@@ -174,6 +173,30 @@
           //product bottom
           .product-bottom {
             padding-top: 10px;
+            //variants
+            .variant-block {
+              .variant-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+                .variant-item {
+                  border-radius: 50%;
+                  cursor: pointer;
+                  img {
+                    border: 1px solid transparent;
+                    border-radius: 50%;
+                    height: 24px;
+                    padding: 1px;
+                    width: 24px;
+                  }
+                  &.current {
+                    img {
+                      border-color: #ad0000;
+                    }
+                  }
+                }
+              }
+            }
             //rating
             .rating-label {
               margin-bottom: 5px;
@@ -200,7 +223,7 @@
             .product-name {
               margin-bottom: 8px;
 
-              a {
+              .name-wrapper {
                 color: #222;
                 text-decoration: none;
               }
@@ -313,4 +336,9 @@
   .product-title-block .product-slider {
     flex: 0 0 calc(50% - 8px); // mobile: 2 sản phẩm/khung nhìn
   }
+}
+::ng-deep .search-product .ant-modal-content {
+  width: 100% !important;
+  border-radius: 8px !important
+  ;
 }

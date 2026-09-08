@@ -1,4 +1,3 @@
-// src/app/core/models/api-response.model.ts
 export type ApiResponse<T> = {
   timestamp: string;
   success: boolean;

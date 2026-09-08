@@ -1,0 +1,56 @@
+.rating-count {
+  display: flex;
+  margin-bottom: 12px;
+  .rating {
+    display: flex;
+    padding-right: 16px;
+    position: relative;
+    &:after {
+      background: #231f20;
+      content: '';
+      height: 15px;
+      position: absolute;
+      right: 0;
+      top: 5px;
+      width: 1px;
+    }
+    .stars {
+      display: inline-block;
+      margin: 0 -1px;
+      position: relative;
+      white-space: nowrap;
+      .overlay {
+        background: #ffffff;
+        height: 100%;
+        mix-blend-mode: color;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      svg {
+        fill: #ad0000;
+        float: left;
+        padding: 0 1px;
+      }
+    }
+    .count-star {
+      color: #231f20;
+      font-size: 12px;
+      letter-spacing: 0.36px;
+      line-height: 15px;
+      margin-left: 5px;
+      position: relative;
+      top: 5px;
+    }
+  }
+  .count-sale {
+    color: #231f20;
+    font-size: 12px;
+    letter-spacing: 0.36px;
+    line-height: 15px;
+    padding-left: 16px;
+    position: relative;
+    top: 7px;
+  }
+}

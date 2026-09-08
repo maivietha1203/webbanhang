@@ -1,12 +1,15 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { ProductPopupComponent } from '../product-popup/product-popup.component';
+import { Router, RouterLink } from '@angular/router';
 
 type TabKey = 'bestseller' | 'discount';
 
 @Component({
   selector: 'app-product-tab',
   standalone: true,
-  imports: [CommonModule, NgFor, NgIf],
+  imports: [CommonModule, NgFor, NgIf, NzModalModule, ProductPopupComponent, RouterLink],
   templateUrl: './product-tab.component.html',
   styleUrl: './product-tab.component.scss',
 })
@@ -18,6 +21,7 @@ export class ProductTabComponent {
 
   activeTab: TabKey = 'bestseller';
   slideDirection: 'left' | 'right' = 'left';
+  isShowPopup = false;
 
   get displayedProducts(): any[] {
     return this.activeTab === 'bestseller' ? this.products : this.discountProducts;
@@ -65,4 +69,14 @@ export class ProductTabComponent {
       el.scrollTo({ left: 0, behavior: 'smooth' });
     }
   }
+  showSearchProduct(): void {
+    this.isShowPopup = true;
+  }
+  handleMuzzle(): void {
+    this.isShowPopup = false;
+  }
+  // constructor(private router: Router) {}
+  // goTo(path: string) {
+  //   this.router.navigate([path]);
+  // }
 }

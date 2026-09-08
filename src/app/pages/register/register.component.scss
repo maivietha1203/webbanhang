@@ -6,8 +6,7 @@
 }
 .login-container {
   width: 500px;
-  min-height: 500px;
-
+  height: 700px;
   background: #f8fafc;
 
   border-radius: 20px;
@@ -44,70 +43,74 @@
 
 .input-group {
   margin-bottom: 20px;
+  label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #333;
+
+    font-weight: 600;
+  }
+  input {
+    width: 100%;
+
+    padding: 12px 15px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 8px;
+
+    font-size: 1em;
+
+    transition: border-color 0.3s;
+    &:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    &:disabled {
+      background: #f5f5f5;
+      cursor: not-allowed;
+    }
+  }
 }
+.role-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 
-.input-group label {
-  display: block;
+  .role-label {
+    font-size: 14px;
+    font-weight: 600;
+  }
 
-  margin-bottom: 8px;
+  .role-select {
+    width: 100%;
+    height: 45px;
+    padding: 0 12px;
 
-  color: #333;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+
+    font-size: 14px;
+    color: #333;
+
+    outline: none;
+    cursor: pointer;
+
+    &:focus {
+      border-color: #333;
+    }
+  }
+}
+.error-message {
+  border-radius: 10px;
+
+  animation: slideIn 0.3s ease;
 
   font-weight: 600;
 }
-
-.input-group input {
-  width: 100%;
-
-  padding: 12px 15px;
-
-  border: 2px solid #ddd;
-
-  border-radius: 8px;
-
-  font-size: 1em;
-
-  transition: border-color 0.3s;
-}
-
-.input-group input:focus {
-  outline: none;
-  border-color: #667eea;
-}
-
-.input-group input:disabled {
-  background: #f5f5f5;
-  cursor: not-allowed;
-}
-
-// .message {
-//   padding: 15px;
-
-//   border-radius: 10px;
-
-//   margin-bottom: 20px;
-//   margin-top: 10px;
-
-//   animation: slideIn 0.3s ease;
-
-//   text-align: center;
-
-//   font-weight: 600;
-// }
-
-// .message.success {
-//   background: #d4edda;
-//   color: #155724;
-
-//   border-left: 4px solid #28a745;
-// }
-
-// .message.error {
-//   background: #f8d7da;
-//   color: #721c24;
-
-//   border-left: 4px solid #dc3545;
-// }
 
 .btn {
   width: 100%;
@@ -186,7 +189,7 @@
     width: 90%;
     height: auto;
 
-    min-height: 600px;
+    min-height: 500px;
   }
 
   .image-panel {

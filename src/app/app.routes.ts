@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { LayoutComponent } from './pages/layout/layout.component';
+import { DetailComponent } from './pages/detail/detail.component';
 
 export const routes: Routes = [
   {
@@ -14,6 +15,11 @@ export const routes: Routes = [
       {
         path: 'home',
         loadComponent: () => import('./pages/home/home.component').then((m) => m.HomeComponent),
+      },
+      {
+        path: 'detail',
+        loadComponent: () =>
+          import('./pages/detail/detail.component').then((m) => m.DetailComponent),
       },
     ],
   },
