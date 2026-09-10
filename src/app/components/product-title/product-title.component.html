@@ -15,7 +15,6 @@
       </button>
 
       <div class="product-list" #productList>
-        <!-- Sản phẩm 1 -->
         <div class="product-slider" *ngFor="let item of products">
           <div class="product-top">
             <div class="product-image">
@@ -35,56 +34,11 @@
             <div class="variant-block">
               <ul class="variant-list">
                 <li
-                  /* data-color="Nâu" */
-                  /* data-img="https://1557691689.e.cdneverest.net/fast/747x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/43c4vlV6AV6APGE34ZDMqzhnW2FFcaTB.webp" */
-                  class="variant-item current"
-                >
-                  <img
-                    /* data-src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/43c4vlV6AV6APGE34ZDMqzhnW2FFcaTB.webp" */
-                    src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/43c4vlV6AV6APGE34ZDMqzhnW2FFcaTB.webp"
-                    alt="Nâu"
-                  />
-                </li>
-                <li
-                  /* data-color="Xanh tím than" */
-                  /* data-img="https://1557691689.e.cdneverest.net/fast/747x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/mqeL3sikULjqFKKGQwOiWSUldjB9gkvT.webp" */
                   class="variant-item"
+                  *ngFor="let variant of item.variants; let i = index"
+                  [class.current]="i === 0"
                 >
-                  <img
-                    /* data-src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/mqeL3sikULjqFKKGQwOiWSUldjB9gkvT.webp" */
-                    src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/mqeL3sikULjqFKKGQwOiWSUldjB9gkvT.webp"
-                    alt="Xanh tím than"
-                  />
-                </li>
-                <li
-                  /* data-color="Trắng"
-                    data-img="https://1557691689.e.cdneverest.net/fast/747x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/PEbhf6hg0A8KlJlhfPe4UPEhGkhoXHsw.webp" */
-                  class="variant-item"
-                >
-                  <img
-                    src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/PEbhf6hg0A8KlJlhfPe4UPEhGkhoXHsw.webp"
-                    alt="Trắng"
-                  />
-                </li>
-                <li
-                  /* data-color="Xanh xám" */
-                  /* data-img="https://1557691689.e.cdneverest.net/fast/747x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/yybqdBZGPNNE5G2HlK2umeU4vwzsGNIm.webp" */
-                  class="variant-item"
-                >
-                  <img
-                    src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/yybqdBZGPNNE5G2HlK2umeU4vwzsGNIm.webp"
-                    alt="Xanh xám"
-                  />
-                </li>
-                <li
-                  /* data-color="Be nhạt" */
-                  /* data-img="https://1557691689.e.cdneverest.net/fast/747x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/evPqDIBqlfn1aUdYL0b7no6r2T2RjlF5.webp" */
-                  class="variant-item"
-                >
-                  <img
-                    src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/evPqDIBqlfn1aUdYL0b7no6r2T2RjlF5.webp"
-                    alt="Be nhạt"
-                  />
+                  <img [src]="variant.image" [alt]="variant.name" />
                 </li>
               </ul>
             </div>

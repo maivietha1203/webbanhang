@@ -35,7 +35,6 @@ import { LocationComponent } from '../../components/location-block/location-bloc
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  // constructor(private productService: ProductService) {}
   posts: Post[] = [];
   effect = 'scrollx';
   // array = [1, 2, 3, 4];
@@ -45,9 +44,24 @@ export class HomeComponent {
   ];
   bestSellerProducts: Product[] = [
     {
+      id: 1,
       image: '../../../assets/images/product-1.webp',
       discount: '-10%',
       name: 'Áo Khoác Gió 2 Lớp Chống Nước',
+      variants: [
+        {
+          image: '../../../assets/images/product/variant/variant-xanh-than.webp',
+          name: 'Xanh than',
+        },
+        {
+          image: '../../../assets/images/product/variant/variant-xanh-troi.webp',
+          name: 'xanh trời',
+        },
+        {
+          image: '../../../assets/images/product/variant/variant-trang.webp',
+          name: 'Trắng',
+        },
+      ],
       currentPrice: '359.000đ',
       regularPrice: '399.000đ',
       sold: 45,
@@ -56,9 +70,24 @@ export class HomeComponent {
   ];
   springSummerProducts: Product[] = [
     {
+      id: 2,
       image: '../../../assets/images/product-1.webp',
       discount: '-10%',
       name: 'Áo Khoác Gió 2 Lớp Chống Nước',
+      variants: [
+        {
+          image: '../../../assets/images/product/variant/variant-xanh-than.webp',
+          name: 'Xanh than',
+        },
+        {
+          image: '../../../assets/images/product/variant/variant-xanh-troi.webp',
+          name: 'xanh trời',
+        },
+        {
+          image: '../../../assets/images/product/variant/variant-trang.webp',
+          name: 'Trắng',
+        },
+      ],
       currentPrice: '359.000đ',
       regularPrice: '399.000đ',
       sold: 45,
@@ -67,9 +96,24 @@ export class HomeComponent {
   ];
   cuteSetProducts: Product[] = [
     {
+      id: 3,
       image: '../../../assets/images/product-1.webp',
       discount: '-10%',
       name: 'Áo Khoác Gió 2 Lớp Chống Nước',
+      variants: [
+        {
+          image: '../../../assets/images/product/variant/variant-xanh-than.webp',
+          name: 'Xanh than',
+        },
+        {
+          image: '../../../assets/images/product/variant/variant-xanh-troi.webp',
+          name: 'xanh trời',
+        },
+        {
+          image: '../../../assets/images/product/variant/variant-trang.webp',
+          name: 'Trắng',
+        },
+      ],
       currentPrice: '359.000đ',
       regularPrice: '399.000đ',
       sold: 45,
@@ -78,9 +122,24 @@ export class HomeComponent {
   ];
   activeWearProducts: Product[] = [
     {
+      id: 4,
       image: '../../../assets/images/product-1.webp',
       discount: '-10%',
       name: 'Áo Khoác Gió 2 Lớp Chống Nước',
+      variants: [
+        {
+          image: '../../../assets/images/product/variant/variant-xanh-than.webp',
+          name: 'Xanh than',
+        },
+        {
+          image: '../../../assets/images/product/variant/variant-xanh-troi.webp',
+          name: 'xanh trời',
+        },
+        {
+          image: '../../../assets/images/product/variant/variant-trang.webp',
+          name: 'Trắng',
+        },
+      ],
       currentPrice: '359.000đ',
       regularPrice: '399.000đ',
       sold: 45,
@@ -89,9 +148,24 @@ export class HomeComponent {
   ];
   officeWearProducts: Product[] = [
     {
+      id: 5,
       image: '../../../assets/images/product-1.webp',
       discount: '-10%',
       name: 'Áo Khoác Gió 2 Lớp Chống Nước',
+      variants: [
+        {
+          image: '../../../assets/images/product/variant/variant-xanh-than.webp',
+          name: 'Xanh than',
+        },
+        {
+          image: '../../../assets/images/product/variant/variant-xanh-troi.webp',
+          name: 'xanh trời',
+        },
+        {
+          image: '../../../assets/images/product/variant/variant-trang.webp',
+          name: 'Trắng',
+        },
+      ],
       currentPrice: '299.000đ',
       regularPrice: '399.000đ',
       sold: 45,
@@ -100,9 +174,24 @@ export class HomeComponent {
   ];
   saleProducts: Product[] = [
     {
+      id: 6,
       image: '../../../assets/images/product-1.webp',
       discount: '-50%',
       name: 'Áo Polo Nam AIR-COOL 5S Fashion Phong Cách Thể Thao Khỏe Khoắn',
+      variants: [
+        {
+          image: '../../../assets/images/product/variant/variant-xanh-than.webp',
+          name: 'Xanh than',
+        },
+        {
+          image: '../../../assets/images/product/variant/variant-xanh-troi.webp',
+          name: 'xanh trời',
+        },
+        {
+          image: '../../../assets/images/product/variant/variant-trang.webp',
+          name: 'Trắng',
+        },
+      ],
       currentPrice: '229.000đ',
       regularPrice: '309.000đ',
       sold: 84,

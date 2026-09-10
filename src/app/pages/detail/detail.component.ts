@@ -10,7 +10,10 @@ import { ProductServiceComponent } from '../../components/detail-component/produ
 import { ProductFeatureComponent } from '../../components/detail-component/product-info/product-feature/product-feature.component';
 import { ProductPopupComponent } from '../../components/product-popup/product-popup.component';
 import { NzModalModule } from 'ng-zorro-antd/modal';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
+import { ProductDescColComponent } from '../../components/detail-component/product-desc/product.-desc.component';
+import { ProductMoreComponent } from '../../components/detail-component/product-more/product-more.component';
+import { ProductStarComponent } from '../../components/detail-component/product-star/product-star.component';
 
 @Component({
   selector: 'app-detail',
@@ -28,24 +31,19 @@ import { NgFor } from '@angular/common';
     ProductPopupComponent,
     NzModalModule,
     NgFor,
+    NgIf,
+    ProductDescColComponent,
+    ProductMoreComponent,
+    ProductStarComponent,
   ],
 
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.scss',
 })
-export class DetailComponent implements OnInit {
+export class DetailComponent {
   isActive = false;
   isShowPopup = false;
 
-  recentProducts: any[] = [];
-
-  ngOnInit(): void {
-    const products = localStorage.getItem('recentProducts');
-
-    if (products) {
-      this.recentProducts = JSON.parse(products);
-    }
-  }
   handleIsActive(): void {
     this.isActive = !this.isActive;
   }
