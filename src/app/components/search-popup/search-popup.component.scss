@@ -65,7 +65,7 @@
             position: relative;
             width: calc(100% - 90px);
             .product-name {
-              a {
+              .name-pr {
                 -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;
                 color: #0f0f0f;

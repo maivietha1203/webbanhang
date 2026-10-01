@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { LayoutComponent } from './pages/layout/layout.component';
-import { DetailComponent } from './pages/detail/detail.component';
 
 export const routes: Routes = [
   {
@@ -20,6 +19,20 @@ export const routes: Routes = [
         path: 'detail',
         loadComponent: () =>
           import('./pages/detail/detail.component').then((m) => m.DetailComponent),
+      },
+      {
+        path: 'category',
+        loadComponent: () =>
+          import('./pages/category/category.component').then((m) => m.CategoryComponent),
+      },
+      {
+        path: 'checkout',
+        loadComponent: () =>
+          import('./pages/checkout/checkout.component').then((m) => m.CheckoutComponent),
+      },
+      {
+        path: 'cart',
+        loadComponent: () => import('./pages/cart/cart.component').then((m) => m.CartComponent),
       },
     ],
   },

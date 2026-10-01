@@ -28,7 +28,10 @@
   [discountProducts]="saleProducts"
 ></app-product-tab>
 <banner-block-component [banner]="banner1"></banner-block-component>
-<app-product-title [products]="bestSellerProducts"></app-product-title>
+<app-product-title
+  (showNotification)="handleShowCartNotification()"
+  [products]="bestSellerProducts"
+></app-product-title>
 <banner-block-component [banner]="banner2"></banner-block-component>
 
 <app-product-title [products]="springSummerProducts"></app-product-title>
@@ -45,3 +48,60 @@
 <news-block-component></news-block-component>
 <customer-col-block-component></customer-col-block-component>
 <location-block-component [banner]="banner6"></location-block-component>
+<div class="success-add-to-cart" [class.active]="isShowCart">
+  <div class="title-block">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289C13.3166 6.90237 12.6834 6.90237 12.2929 7.29289L9 10.5858L7.70711 9.29289C7.31658 8.90237 6.68342 8.90237 6.29289 9.29289C5.90237 9.68342 5.90237 10.3166 6.29289 10.7071L8.29289 12.7071C8.68342 13.0976 9.31658 13.0976 9.70711 12.7071L13.7071 8.70711Z"
+        fill="#111827"
+      ></path>
+    </svg>
+    <span>Đã thêm vào giỏ hàng!</span>
+  </div>
+  <div class="cart-item">
+    <div class="product-image">
+      <img
+        src="https://1557691689.e.cdneverest.net/fast/180x0/filters:format(webp)/static.5sfashion.vn/storage/product_detail_color/QUIX230nuciO7sLIJBPNBuKtpNHUGQHo.webp"
+      />
+    </div>
+    <div class="product-info">
+      <div class="product-name">Áo Polo Nam Pique MIX-COLOR Phom Modern Fit M0APC26101</div>
+      <div class="product-more">
+        <div class="product-variant">Xanh tím than/ 2XL</div>
+        <div class="product-price">249.000 đ</div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-block">
+    <div class="item-bottom" routerLink="/cart">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
+        <path
+          d="M16.25 22.5C17.2165 22.5 18 21.7165 18 20.75C18 19.7835 17.2165 19 16.25 19C15.2835 19 14.5 19.7835 14.5 20.75C14.5 21.7165 15.2835 22.5 16.25 22.5Z"
+          fill="#292D32"
+        ></path>
+        <path
+          d="M8.25 22.5C9.2165 22.5 10 21.7165 10 20.75C10 19.7835 9.2165 19 8.25 19C7.2835 19 6.5 19.7835 6.5 20.75C6.5 21.7165 7.2835 22.5 8.25 22.5Z"
+          fill="#292D32"
+        ></path>
+        <path
+          opacity="0.4"
+          d="M4.84 3.94L4.64 6.39C4.6 6.86 4.97 7.25 5.44 7.25H20.75C21.17 7.25 21.52 6.92999 21.55 6.50999C21.68 4.73999 20.33 3.3 18.56 3.3H6.28999C6.18999 2.86 5.98999 2.44 5.67999 2.09C5.18999 1.56 4.49 1.25 3.77 1.25H2C1.59 1.25 1.25 1.59 1.25 2C1.25 2.41 1.59 2.75 2 2.75H3.74001C4.05001 2.75 4.34 2.88001 4.55 3.10001C4.76 3.33001 4.86 3.63 4.84 3.94Z"
+          fill="#292D32"
+        ></path>
+        <path
+          d="M20.5101 8.75H5.17006C4.75006 8.75 4.41005 9.07 4.37005 9.48L4.01005 13.83C3.87005 15.53 5.21006 17 6.92006 17H18.0401C19.5401 17 20.8601 15.77 20.9701 14.27L21.3001 9.60001C21.3401 9.14001 20.9801 8.75 20.5101 8.75Z"
+          fill="#292D32"
+        ></path>
+      </svg>
+      <span>Xem giỏ hàng</span>
+    </div>
+  </div>
+</div>

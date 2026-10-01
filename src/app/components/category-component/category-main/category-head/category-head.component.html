@@ -1,0 +1,69 @@
+<div class="head-page">
+  <div class="search-count">
+    <span class="count-result"><span>121</span> kết quả</span>
+  </div>
+  <div class="filter-keyword d-none d-lg-block">
+    <div class="title">Đang lọc theo</div>
+    <div class="keyword-items">
+      <div class="item">0-10% <span></span></div>
+    </div>
+  </div>
+  <div class="sort-block">
+    <div class="title">Sắp xếp theo</div>
+    <div class="sort-select" [class.active]="isSortList">
+      <div class="sort-choosed" (click)="handleSortList()">
+        <span>Mặc định</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path
+            d="M12.0002 10.828L7.05023 15.778L5.63623 14.364L12.0002 8L18.3642 14.364L16.9502 15.778L12.0002 10.828Z"
+            fill="#282F42"
+          ></path>
+        </svg>
+      </div>
+      <div class="sort-list" [class.current]="isSortList">
+        <div class="sort-item">
+          <label class="custom-radio"
+            >Mặc định
+            <input checked="" type="radio" class="radio-sort" name="radio" />
+            <span class="radiobtn"></span>
+          </label>
+        </div>
+        <div class="sort-item">
+          <label class="custom-radio"
+            >Giá: Từ thấp đến cao
+            <input type="radio" class="radio-sort" name="radio" />
+            <span class="radiobtn"></span>
+          </label>
+        </div>
+        <div class="sort-item">
+          <label class="custom-radio"
+            >Giá: Từ cao đến thấp
+            <input type="radio" class="radio-sort" name="radio" />
+            <span class="radiobtn"></span>
+          </label>
+        </div>
+        <div class="sort-item">
+          <label class="custom-radio"
+            >Mới nhất
+            <input type="radio" class="radio-sort" name="radio" />
+            <span class="radiobtn"></span>
+          </label>
+        </div>
+        <div class="sort-item">
+          <label class="custom-radio"
+            >Cũ nhất
+            <input type="radio" class="radio-sort" name="radio" />
+            <span class="radiobtn"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="overlay-sort" [class.active]="isSortList"></div>
+  </div>
+</div>

@@ -4,9 +4,9 @@
       <div class="row">
         <div class="col-12 col-md-6" *ngFor="let item of banner">
           <div class="image-banner">
-            <a [href]="item.link">
+            <div [routerLink]="item.link">
               <img [src]="item.image" [alt]="item.alt" />
-            </a>
+            </div>
           </div>
         </div>
       </div>

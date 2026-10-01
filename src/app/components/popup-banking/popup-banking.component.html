@@ -1,0 +1,145 @@
+<div class="popup-banking">
+  <div class="banking-block">
+    <div class="banking-close" (click)="onCloseBanking()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        fill="none"
+      >
+        <circle cx="16" cy="16" r="11.2" stroke="#4F525D" stroke-width="1.6"></circle>
+        <path
+          d="M21.3332 10.666L10.6665 21.3327"
+          stroke="#4F525D"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+        <path
+          d="M10.6668 10.666L21.3335 21.3327"
+          stroke="#4F525D"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </div>
+    <div class="banking-body">
+      <div class="title-banking">Quét mã QR để thanh toán</div>
+      <div class="time-banking count-down-checkout">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="21"
+          height="20"
+          viewBox="0 0 21 20"
+          fill="none"
+        >
+          <path
+            d="M17.7913 11.0417C17.7913 15.0667 14.5247 18.3333 10.4997 18.3333C6.47467 18.3333 3.20801 15.0667 3.20801 11.0417C3.20801 7.01667 6.47467 3.75 10.4997 3.75C14.5247 3.75 17.7913 7.01667 17.7913 11.0417Z"
+            stroke="#0F0F0F"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+          <path
+            d="M10.4995 6.66602V10.8327"
+            stroke="#0F0F0F"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+          <path
+            d="M7.99951 1.66602H12.9995"
+            stroke="#0F0F0F"
+            stroke-width="1.25"
+            stroke-miterlimit="10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </svg>
+        Thời gian còn lại: <span class="checkout-minutes">15</span>p<span class="checkout-seconds"
+          >00</span
+        >s
+      </div>
+      <div class="content-banking">
+        <div class="qr-code">
+          <img src="https://img.vietqr.io/image/mbbank-0365908882-compact.jpg" />
+        </div>
+        <div class="info-banking">
+          <div class="item-info">
+            <div class="title">Ngân hàng:</div>
+            <div class="value bank-name">MBBank – Ngân hàng Quân Đội</div>
+          </div>
+          <div class="item-info">
+            <div class="title">Số tài khoản:</div>
+            <div class="value">
+              0365908882
+              <div class="ic-copy">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <path
+                    d="M11.3325 8.93464V10.9346C11.3325 13.6013 10.2659 14.668 7.59919 14.668H5.06585C2.39919 14.668 1.33252 13.6013 1.33252 10.9346V8.4013C1.33252 5.73464 2.39919 4.66797 5.06585 4.66797H7.06585"
+                    stroke="#BF272D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M11.3336 8.93464H9.20023C7.60023 8.93464 7.06689 8.4013 7.06689 6.8013V4.66797L11.3336 8.93464Z"
+                    stroke="#BF272D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M7.7334 1.33203H10.4001"
+                    stroke="#BF272D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M4.66553 3.33203C4.66553 2.22536 5.55886 1.33203 6.66553 1.33203H8.41219"
+                    stroke="#BF272D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M14.6668 5.33203V9.4587C14.6668 10.492 13.8268 11.332 12.7935 11.332"
+                    stroke="#BF272D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M14.6655 5.33203H12.6655C11.1655 5.33203 10.6655 4.83203 10.6655 3.33203V1.33203L14.6655 5.33203Z"
+                    stroke="#BF272D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="item-info">
+            <div class="title">Tên tài khoản:</div>
+            <div class="value">CÔNG TY CỔ PHẦN 5S FASHION</div>
+          </div>
+          <div class="item-info">
+            <div class="title">Nội dung:</div>
+            <div class="value bank-name">Thanh toán cho đơn hàng: 3DG1A27FA9</div>
+          </div>
+          <div class="item-info">
+            <div class="title">Số tiền:</div>
+            <div class="value total-price">254.000đ</div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-banking">
+        <div class="button-confirm">Xác nhận</div>
+      </div>
+    </div>
+  </div>
+</div>

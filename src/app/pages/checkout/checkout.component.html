@@ -1,0 +1,394 @@
+<div class="checkout-body">
+  <div class="container">
+    <div class="row reverse-elem">
+      <div class="col-12 col-md-8">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div class="customer-block">
+              <div class="title-block">Thông tin giao hàng</div>
+              <div class="body-block">
+                <div class="data-customer">
+                  <input
+                    type="text"
+                    name="customer_name"
+                    class="input-customer-name error-input"
+                    placeholder="Họ và tên"
+                  />
+                  <div class="error" style="display: block">Vui lòng không bỏ trống</div>
+                </div>
+                <div class="data-customer">
+                  <input
+                    type="text"
+                    name="customer_mobile"
+                    class="input-customer-mobile"
+                    placeholder="Số điện thoại"
+                  />
+                  <div class="error" style="display: none"></div>
+                </div>
+                <div class="data-customer">
+                  <input
+                    type="text"
+                    name="customer_email"
+                    class="input-customer-email"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="data-customer">
+                  <input
+                    type="text"
+                    name="customer_address"
+                    class="input-customer-address"
+                    placeholder="Home City 177 Trung Kính, Cầu Giấy, Hà Nội"
+                  />
+                </div>
+                <div class="data-customer active">
+                  <input type="hidden" name="customer_city" class="select-customer-address" />
+                  <div class="title-choose">
+                    <span>Hà Nội</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="8"
+                      viewBox="0 0 10 8"
+                      fill="none"
+                    >
+                      <path
+                        d="M1 1.64453L5.14429 5.78882L9.28858 1.64453"
+                        stroke="#0F0F0F"
+                        stroke-width="1.5"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="select-option" style="display: none">
+                    <div class="search-block">
+                      <input class="search-data" type="text" placeholder="Tìm kiếm" />
+                      <div class="ic-search">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <circle cx="11" cy="11" r="7" stroke="#6C757D" stroke-width="2"></circle>
+                          <path
+                            d="M20 20L17 17"
+                            stroke="#6C757D"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <ul class="data-select">
+                      <li class="active">Hà Nội</li>
+                      <li>Hồ Chí Minh</li>
+                    </ul>
+                  </div>
+                  <div class="error" style="display: none"></div>
+                </div>
+                <div class="data-customer">
+                  <input
+                    type="hidden"
+                    name="customer_district"
+                    class="select-customer-address error-input"
+                    value=""
+                  />
+                  <div class="title-choose checkout-info-address error-input">
+                    <span>Chọn Quận/ Huyện</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="8"
+                      viewBox="0 0 10 8"
+                      fill="none"
+                    >
+                      <path
+                        d="M1 1.64453L5.14429 5.78882L9.28858 1.64453"
+                        stroke="#0F0F0F"
+                        stroke-width="1.5"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="select-option hide-scrollbar">
+                    <div class="search-block">
+                      <input class="search-data" type="text" placeholder="Tìm kiếm" />
+                      <div class="ic-search">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <circle cx="11" cy="11" r="7" stroke="#6C757D" stroke-width="2"></circle>
+                          <path
+                            d="M20 20L17 17"
+                            stroke="#6C757D"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <ul class="data-select select-info-address">
+                      <li>Quận Hai Bà Trưng</li>
+                    </ul>
+                  </div>
+                  <div class="error er-district" style="display: block">
+                    Vui lòng không bỏ trống
+                  </div>
+                </div>
+                <div class="data-customer">
+                  <input
+                    type="hidden"
+                    name="customer_wards"
+                    class="select-customer-address input-required-customer error-input"
+                    value=""
+                  />
+                  <div class="title-choose checkout-info-address error-input">
+                    <span>Chọn Phường/ Xã</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="8"
+                      viewBox="0 0 10 8"
+                      fill="none"
+                    >
+                      <path
+                        d="M1 1.64453L5.14429 5.78882L9.28858 1.64453"
+                        stroke="#0F0F0F"
+                        stroke-width="1.5"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="select-option hide-scrollbar">
+                    <div class="search-block">
+                      <input class="search-data" type="text" placeholder="Tìm kiếm" />
+                      <div class="ic-search">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <circle cx="11" cy="11" r="7" stroke="#6C757D" stroke-width="2"></circle>
+                          <path
+                            d="M20 20L17 17"
+                            stroke="#6C757D"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <ul class="data-select select-info-address"></ul>
+                  </div>
+                  <div class="error" style="display: block">Vui lòng không bỏ trống</div>
+                </div>
+                <div class="data-customer">
+                  <input
+                    type="text"
+                    name="customer_note"
+                    class="input-customer-note"
+                    placeholder="Ghi chú thêm (Ví dụ: Giao hàng giờ hành chính)"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="payment-block">
+              <div class="title-block">Hình thức thanh toán</div>
+              <div class="body-block">
+                <div class="item-payment">
+                  <label class="custom-radio">
+                    <div class="ic-payment">
+                      <img alt="" src="../../../assets/images/checkout-cod.png" />
+                    </div>
+                    <div class="title-payment">COD, Thanh toán khi nhận hàng</div>
+                    <input type="radio" checked="checked" value="" name="checked-method" />
+                    <span class="checkmark">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22ZM11.003 16L18.073 8.929L16.659 7.515L11.003 13.172L8.174 10.343L6.76 11.757L11.003 16Z"
+                          fill="#BF272D"
+                        ></path>
+                      </svg>
+                    </span>
+                  </label>
+                </div>
+                <div class="item-payment">
+                  <label class="custom-radio">
+                    <div class="ic-payment">
+                      <img
+                        alt=""
+                        src="https://5sfashion.vn/frontend/assets/images/checkout-banking.png"
+                      />
+                    </div>
+                    <div class="title-payment">Thanh toán chuyển khoản</div>
+                    <input type="radio" name="checked-method" />
+                    <span class="checkmark">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22ZM11.003 16L18.073 8.929L16.659 7.515L11.003 13.172L8.174 10.343L6.76 11.757L11.003 16Z"
+                          fill="#BF272D"
+                        ></path>
+                      </svg>
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="cart-block">
+          <div class="title-block">Giỏ hàng</div>
+          <div class="body-block">
+            <div class="list-product-cart">
+              <div class="item-cart">
+                <div class="block-product">
+                  <div class="main-product">
+                    <div class="button-remove">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                      >
+                        <path
+                          d="M15 5L5 15"
+                          stroke="#909195"
+                          stroke-width="1.66667"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                        <path
+                          d="M5 5L15 15"
+                          stroke="#909195"
+                          stroke-width="1.66667"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="product-image">
+                      <img src="../../../assets/images/cart/product-cart.webp" />
+                    </div>
+                    <div class="product-info">
+                      <div class="title-product">
+                        Áo Polo Nam AIR-COOL 5S Fashion Phong Cách Thể Thao Khỏe Khoắn M0APC26035
+                      </div>
+                      <div class="variant-product">
+                        <div class="variant-item">
+                          <div class="select-variant">Tím than đậm</div>
+                        </div>
+                        <div class="variant-item"><div class="select-variant">S</div></div>
+                      </div>
+                      <div class="bottom-block">
+                        <div class="price-product">
+                          <div class="regular-price">309.000đ</div>
+                          <div class="price">229.000đ</div>
+                        </div>
+                        <div class="qty-product">
+                          <div class="qty-wrapper">
+                            <div class="button-minus">-</div>
+                            <div class="value-qty">1</div>
+                            <div class="button-plus">+</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bottom-cart">
+              <div class="coupon-input">
+                <div class="form-coupon">
+                  <div class="input-coupon">
+                    <input class="input" type="text" placeholder="Nhập mã giảm giá của bạn" />
+                  </div>
+                  <div class="button-coupon">
+                    <button type="button" class="button">Áp dụng</button>
+                  </div>
+                </div>
+                <div class="message error" style="display: none">
+                  Rất tiếc! Không thể tìm thấy mã giảm giá này. Bạn vui lòng kiểm tra lại mã và hạn
+                  sử dụng nhé.
+                </div>
+              </div>
+              <div class="price-block">
+                <div class="wrapper-block">
+                  <div class="item-price">
+                    <div class="title">Tạm tính</div>
+                    <div class="value">200.000đ</div>
+                  </div>
+                  <div class="item-price">
+                    <div class="title">Giảm giá trực tiếp</div>
+                    <div class="value">-0đ</div>
+                  </div>
+                  <div class="item-price">
+                    <div class="title">Tổng tiền giảm giá combo</div>
+                    <div class="value">200.000đ</div>
+                  </div>
+                  <div class="item-price">
+                    <div class="title">Tổng tiền giảm giá deal sốc</div>
+                    <div class="value">200.000đ</div>
+                  </div>
+                  <div class="item-price">
+                    <div class="title">Mã giảm giá đã áp dụng</div>
+                    <div class="value">200.000đ</div>
+                  </div>
+                  <div class="item-price">
+                    <div class="title">Phí giao hàng</div>
+                    <div class="value">200.000đ</div>
+                  </div>
+                  <div class="item-price total">
+                    <div class="title">Tổng</div>
+                    <div class="value">200.000đ</div>
+                  </div>
+                </div>
+              </div>
+              <div class="active-block">
+                <div class="button-checkout" (click)="handleShowCheckout()">
+                  Thanh toán
+                  <span class="payment-choose">(COD)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<nz-modal
+  [(nzVisible)]="isCheckout"
+  [nzFooter]="null"
+  [nzClosable]="false"
+  [nzCentered]="true"
+  nzWidth="55%"
+  nzClassName="popup-banking"
+  (nzOnCancel)="handleCloseCheckout()"
+>
+  <ng-container *nzModalContent>
+    <popup-banking-component (close)="handleCloseCheckout()"></popup-banking-component>
+  </ng-container>
+</nz-modal>

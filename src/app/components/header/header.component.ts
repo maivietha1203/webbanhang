@@ -5,7 +5,7 @@ import { SearchPopupComponent } from '../search-popup/search-popup.component';
 @Component({
   selector: 'header-layout',
   standalone: true,
-  imports: [SearchPopupComponent, NzModalModule],
+  imports: [SearchPopupComponent, NzModalModule, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })

@@ -4,7 +4,7 @@ import { SearchPopupComponent } from './components/search-popup/search-popup.com
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SearchPopupComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

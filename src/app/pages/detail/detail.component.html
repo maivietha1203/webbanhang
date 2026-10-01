@@ -32,7 +32,7 @@
                     >
                       <div class="image">
                         <img
-                          src="https://1557691689.e.cdneverest.net/fast/1325x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/ANmfIW013xln8ECUAxU5kWgaxLnaNHVJ.webp"
+                          src="../../../assets/images/detail-thumb.webp"
                           alt="Áo Polo Nam AIR-COOL 5S Fashion"
                         />
                       </div>
@@ -54,7 +54,7 @@
                   >
                     <div class="item-image" style="height: 80.625px; margin-bottom: 20px">
                       <img
-                        src="https://1557691689.e.cdneverest.net/fast/180x0/filters:format(webp)/static.5sfashion.vn/storage/product/dJGB0v4tYg7PhDBJbvTB6QB5a00YviID.webp"
+                        src="../../../assets/images/detail-main-image.webp"
                         alt="Áo Polo Nam AIR-COOL 5S Fashion Phong Cách Thể Thao Khỏe Khoắn M0APC26035"
                         height="80"
                         width="80"
@@ -83,7 +83,10 @@
               (toggleActive)="handleIsActive()"
             ></product-desc-component>
             <product-star-layout></product-star-layout>
-
+            <product-similar-layout
+              [isShowSimilar]="isShowSimilar"
+              (showSimilar)="showSearchSimilar()"
+            ></product-similar-layout>
             <product-more-layout
               [isShowPopup]="isShowPopup"
               (showPopup)="showSearchProduct()"
@@ -105,5 +108,18 @@
 >
   <ng-container *nzModalContent>
     <product-popup-layout (closeProductPopup)="handleMuzzle()"></product-popup-layout>
+  </ng-container>
+</nz-modal>
+<nz-modal
+  [(nzVisible)]="isShowSimilar"
+  [nzFooter]="null"
+  [nzClosable]="false"
+  [nzCentered]="true"
+  nzWidth="65%"
+  nzClassName="search-product"
+  (nzOnCancel)="handleMuzzleSimilar()"
+>
+  <ng-container *nzModalContent>
+    <product-popup-layout (closeProductPopup)="handleMuzzleSimilar()"></product-popup-layout>
   </ng-container>
 </nz-modal>

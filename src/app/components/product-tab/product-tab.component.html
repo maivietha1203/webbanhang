@@ -39,9 +39,9 @@
           <div class="product-slider" *ngFor="let item of displayedProducts">
             <div class="product-top">
               <div class="product-image">
-                <a href="">
+                <div class="image-w">
                   <img [src]="item.image" alt="" />
-                </a>
+                </div>
               </div>
               <div *ngIf="item.discount" class="discount">{{ item.discount }}</div>
               <div class="quick-view" (click)="showSearchProduct()">

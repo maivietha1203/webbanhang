@@ -1,0 +1,36 @@
+.search-body {
+  background: #fafafa;
+  padding-bottom: 100px;
+  padding-top: 113px;
+}
+
+//breadcrumb
+.breadcrumb-block,
+.breadcrumb-block h1 {
+  color: #0f0f0f;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+.breadcrumb-block > div,
+.breadcrumb-block > h1 {
+  display: inline-block;
+  font-weight: 500;
+}
+
+.breadcrumb-block {
+  .br-icon {
+    color: #444;
+    font-size: 16px;
+    margin: 5px;
+  }
+  .br-item {
+    .item-title {
+      color: #0f0f0f;
+    }
+  }
+}

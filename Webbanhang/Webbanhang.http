@@ -1,0 +1,6 @@
+@Webbanhang_HostAddress = http://localhost:5178
+
+GET {{Webbanhang_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

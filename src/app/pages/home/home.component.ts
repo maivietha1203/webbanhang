@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../../models/post.model';
-import { NgFor, NgClass } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { ServiceComponent } from '../../components/service-block/service-block.component';
 import { VoucherComponent } from '../../components/voucher-block/voucher-block.component';
@@ -12,12 +12,12 @@ import { BannerComponent } from '../../components/banner-block/banner-block.comp
 import { CustomerComponent } from '../../components/customer-col-block/customer-col-block.component';
 import { BannerColComponent } from '../../components/banner-col-block/banner-col-block.component';
 import { LocationComponent } from '../../components/location-block/location-block.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    NgFor,
     NzCarouselModule,
     NgClass,
     ServiceComponent,
@@ -29,6 +29,7 @@ import { LocationComponent } from '../../components/location-block/location-bloc
     CustomerComponent,
     BannerColComponent,
     LocationComponent,
+    RouterLink,
   ],
 
   templateUrl: './home.component.html',
@@ -242,6 +243,13 @@ export class HomeComponent {
       alt: '111',
     },
   ];
+  isShowCart: boolean = false;
+  handleShowCartNotification(): void {
+    this.isShowCart = true;
+    setTimeout(() => {
+      this.isShowCart = false;
+    }, 7000);
+  }
   // ngOnInit() {
   //   this.productService.getAll().subscribe({
   //     next: (data) => {

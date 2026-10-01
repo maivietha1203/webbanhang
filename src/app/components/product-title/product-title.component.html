@@ -15,6 +15,7 @@
       </button>
 
       <div class="product-list" #productList>
+        <!-- Sản phẩm 1 -->
         <div class="product-slider" *ngFor="let item of products">
           <div class="product-top">
             <div class="product-image">
@@ -91,10 +92,14 @@
   [nzClosable]="false"
   [nzCentered]="true"
   nzWidth="65%"
+  [nzZIndex]="1000"
   nzClassName="search-product"
   (nzOnCancel)="handleMuzzle()"
 >
   <ng-container *nzModalContent>
-    <product-popup-layout (closeProductPopup)="handleMuzzle()"></product-popup-layout>
+    <product-popup-layout
+      (showCart)="handleShowNotification()"
+      (closeProductPopup)="handleMuzzle()"
+    ></product-popup-layout>
   </ng-container>
 </nz-modal>

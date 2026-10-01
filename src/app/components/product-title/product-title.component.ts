@@ -1,28 +1,24 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
-import { NzModalComponent, NzModalContentDirective } from 'ng-zorro-antd/modal';
+
 import { ProductPopupComponent } from '../product-popup/product-popup.component';
 import { Router } from '@angular/router';
 import { Product, Variant } from '../../models/product.model';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'app-product-title',
   standalone: true,
-  imports: [
-    CommonModule,
-    NgFor,
-    NgIf,
-    NzModalComponent,
-    ProductPopupComponent,
-    NzModalContentDirective,
-  ],
+  imports: [CommonModule, NgFor, NgIf, NzModalModule, ProductPopupComponent],
   templateUrl: './product-title.component.html',
   styleUrl: './product-title.component.scss',
 })
 export class ProductTitleComponent {
   @Input() products: Product[] = [];
+  @Output() showNotification = new EventEmitter<void>();
+
   @ViewChild('productList') productListRef!: ElementRef<HTMLElement>;
-  isShowPopup = false;
+  isShowPopup: boolean = false;
   constructor(private router: Router) {}
 
   private getItems(): HTMLElement[] {
@@ -62,6 +58,9 @@ export class ProductTitleComponent {
   }
   handleMuzzle(): void {
     this.isShowPopup = false;
+  }
+  handleShowNotification(): void {
+    this.showNotification.emit();
   }
   onSelectItem(item: any) {
     if (!item) {

@@ -10,10 +10,10 @@ import { ProductServiceComponent } from '../../components/detail-component/produ
 import { ProductFeatureComponent } from '../../components/detail-component/product-info/product-feature/product-feature.component';
 import { ProductPopupComponent } from '../../components/product-popup/product-popup.component';
 import { NzModalModule } from 'ng-zorro-antd/modal';
-import { NgFor, NgIf } from '@angular/common';
 import { ProductDescColComponent } from '../../components/detail-component/product-desc/product.-desc.component';
 import { ProductMoreComponent } from '../../components/detail-component/product-more/product-more.component';
 import { ProductStarComponent } from '../../components/detail-component/product-star/product-star.component';
+import { ProductSimilarComponent } from '../../components/detail-component/product-similar/product-similar.component';
 
 @Component({
   selector: 'app-detail',
@@ -30,11 +30,10 @@ import { ProductStarComponent } from '../../components/detail-component/product-
     ProductFeatureComponent,
     ProductPopupComponent,
     NzModalModule,
-    NgFor,
-    NgIf,
     ProductDescColComponent,
     ProductMoreComponent,
     ProductStarComponent,
+    ProductSimilarComponent,
   ],
 
   templateUrl: './detail.component.html',
@@ -43,9 +42,16 @@ import { ProductStarComponent } from '../../components/detail-component/product-
 export class DetailComponent {
   isActive = false;
   isShowPopup = false;
+  isShowSimilar = false;
 
   handleIsActive(): void {
     this.isActive = !this.isActive;
+  }
+  showSearchSimilar(): void {
+    this.isShowSimilar = true;
+  }
+  handleMuzzleSimilar(): void {
+    this.isShowSimilar = false;
   }
   showSearchProduct(): void {
     this.isShowPopup = true;

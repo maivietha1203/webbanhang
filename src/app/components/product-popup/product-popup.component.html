@@ -50,53 +50,31 @@
                   <div class="title">Ghi nhạt</div>
                 </div>
                 <ul class="variant-list">
-                  <li
-                    /* data-color="Nâu" */
-                    /* data-img="https://1557691689.e.cdneverest.net/fast/747x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/43c4vlV6AV6APGE34ZDMqzhnW2FFcaTB.webp" */
-                    class="detail-variant-item current"
-                  >
+                  <li class="detail-variant-item current">
                     <img
-                      /* data-src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/43c4vlV6AV6APGE34ZDMqzhnW2FFcaTB.webp" */
                       src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/43c4vlV6AV6APGE34ZDMqzhnW2FFcaTB.webp"
                       alt="Nâu"
                     />
                   </li>
-                  <li
-                    /* data-color="Xanh tím than" */
-                    /* data-img="https://1557691689.e.cdneverest.net/fast/747x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/mqeL3sikULjqFKKGQwOiWSUldjB9gkvT.webp" */
-                    class="detail-variant-item"
-                  >
+                  <li class="detail-variant-item">
                     <img
-                      /* data-src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/mqeL3sikULjqFKKGQwOiWSUldjB9gkvT.webp" */
                       src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/mqeL3sikULjqFKKGQwOiWSUldjB9gkvT.webp"
                       alt="Xanh tím than"
                     />
                   </li>
-                  <li
-                    /* data-color="Trắng"
-                    data-img="https://1557691689.e.cdneverest.net/fast/747x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/PEbhf6hg0A8KlJlhfPe4UPEhGkhoXHsw.webp" */
-                    class="detail-variant-item"
-                  >
+                  <li class="detail-variant-item">
                     <img
                       src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/PEbhf6hg0A8KlJlhfPe4UPEhGkhoXHsw.webp"
                       alt="Trắng"
                     />
                   </li>
-                  <li
-                    /* data-color="Xanh xám" */
-                    /* data-img="https://1557691689.e.cdneverest.net/fast/747x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/yybqdBZGPNNE5G2HlK2umeU4vwzsGNIm.webp" */
-                    class="detail-variant-item"
-                  >
+                  <li class="detail-variant-item">
                     <img
                       src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/yybqdBZGPNNE5G2HlK2umeU4vwzsGNIm.webp"
                       alt="Xanh xám"
                     />
                   </li>
-                  <li
-                    /* data-color="Be nhạt" */
-                    /* data-img="https://1557691689.e.cdneverest.net/fast/747x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/evPqDIBqlfn1aUdYL0b7no6r2T2RjlF5.webp" */
-                    class="detail-variant-item"
-                  >
+                  <li class="detail-variant-item">
                     <img
                       src="https://1557691689.e.cdneverest.net/fast/45x0/filters:format(webp)/static.5sfashion.vn/storage/product_color/evPqDIBqlfn1aUdYL0b7no6r2T2RjlF5.webp"
                       alt="Be nhạt"
@@ -120,14 +98,15 @@
             <div class="product-action">
               <div class="product-qty">
                 <div class="qty-wrapper">
-                  <div class="button-minus" data-target=".product-add-to-cart">-</div>
-                  <div class="value-qty" data-qty="1">1</div>
-                  <div class="button-plus" data-target=".product-add-to-cart">+</div>
+                  <div class="button-minus">-</div>
+                  <div class="value-qty">1</div>
+                  <div class="button-plus">+</div>
                 </div>
               </div>
               <div
                 class="product-add-to-cart in-stock buy-now-cart-popup-desktop"
                 style="display: block"
+                (click)="onHandleShowCart()"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -210,7 +189,7 @@
                 </svg>
                 <span>Hết hàng</span>
               </div>
-              <div class="buy-now in-stock" data-toggle="buy-now-cart-popup-desktop">MUA NGAY</div>
+              <div class="buy-now in-stock">MUA NGAY</div>
             </div>
             <div class="view-detail">
               <div class="title-view-detail">Xem chi tiết sản phẩm &gt;&gt;</div>

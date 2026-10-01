@@ -13,3 +13,101 @@
     height: 561px !important;
   }
 }
+.success-add-to-cart {
+  background: #fff;
+  border-radius: 12px;
+  bottom: 30px;
+  opacity: 1;
+  padding: 15px;
+  pointer-events: none;
+  position: fixed;
+  right: 30px;
+  transform: translate3d(0, calc(100% + 30px), 0);
+  transition:
+    transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1),
+    visibility 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  visibility: hidden;
+  width: 300px;
+  z-index: 1010;
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    visibility: visible;
+  }
+  .title-block {
+    border-bottom: 1px solid #d9d9d9;
+    color: #0f0f0f;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+  .cart-item {
+    display: flex;
+    .product-image {
+      animation: shine-loading-image 2s ease-out infinite;
+      background-image: linear-gradient(90deg, #ececec, #f4f4f4 40px, #ececec 80px);
+      position: relative;
+      &::before {
+        content: '';
+        display: block;
+        height: 0;
+        padding-top: 133.331%;
+        width: 80px;
+      }
+      img {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+    }
+    .product-info {
+      color: #0f0f0f;
+      margin-left: 10px;
+      position: relative;
+      width: calc(100% - 90px);
+      .product-name {
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        color: #0f0f0f;
+        display: block;
+        display: -webkit-box;
+        font-size: 14px;
+        font-weight: 600;
+        height: 40px;
+        line-height: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .product-more {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        .product-variant {
+          font-size: 12px;
+        }
+        .product-price {
+          color: #bf272d;
+          font-size: 14px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  .bottom-block {
+    margin-top: 15px;
+    .item-bottom {
+      border: 1px solid #0f0f0f;
+      border-radius: 100px;
+      color: #0f0f0f;
+      display: block;
+      font-size: 14px;
+      padding: 7px 0;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}

@@ -38,14 +38,15 @@
         }
       }
     }
+    .second-title {
+      color: rgb(5, 108, 108);
+      margin: 10px;
+    }
     p {
       color: #000;
       font-size: 14px;
       line-height: 20px;
       margin-bottom: 10px;
-    }
-    a {
-      text-align: none;
     }
   }
   .show-more-desc {
@@ -64,4 +65,7 @@
     transform: translateX(-50%);
     transition: 0.3s ease-in-out;
   }
+}
+img {
+  max-width: 100%;
 }

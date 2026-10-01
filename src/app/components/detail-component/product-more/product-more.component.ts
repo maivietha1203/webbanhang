@@ -1,12 +1,13 @@
 import { isPlatformBrowser, NgFor } from '@angular/common';
 import { Component, EventEmitter, Inject, Input, OnInit, Output, PLATFORM_ID } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'product-more-layout',
   standalone: true,
   templateUrl: './product-more.component.html',
   styleUrl: './product-more.component.scss',
-  imports: [NgFor],
+  imports: [NgFor, RouterLink],
 })
 export class ProductMoreComponent implements OnInit {
   @Input() isShowPopup = false;

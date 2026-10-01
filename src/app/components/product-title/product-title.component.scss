@@ -225,7 +225,6 @@
 
               .name-wrapper {
                 color: #222;
-                text-decoration: none;
               }
 
               h3 {
@@ -339,6 +338,6 @@
 }
 ::ng-deep .search-product .ant-modal-content {
   width: 100% !important;
-  border-radius: 8px !important
-  ;
+  border-radius: 8px !important;
+  z-index: 1000 !important;
 }

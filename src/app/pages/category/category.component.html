@@ -1,0 +1,20 @@
+<div class="search-body">
+  <div class="container">
+    <div class="row">
+      <div class="breadcrumb-block offset-lg-3 col-lg-9">
+        <div class="br-item"><div class="item-title" routerLink="/home">Trang chủ</div></div>
+        <div class="br-icon">/</div>
+        <h1 class="br-item">BST Xuân Hè 2026</h1>
+      </div>
+      <div class="col-lg-3">
+        <category-filter-layout></category-filter-layout>
+      </div>
+      <div class="col-lg-9">
+        <div class="main-page">
+          <category-head-layout></category-head-layout>
+          <category-content-layout [categoryProduct]="CategoryProducts"></category-content-layout>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

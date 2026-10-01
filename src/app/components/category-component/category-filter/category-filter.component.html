@@ -1,0 +1,216 @@
+<div class="filter-block">
+  <div class="filter-head">
+    <div class="filter-title">
+      <svg
+        class="d-none d-lg-inline-block"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
+        <mask
+          id="mask0_1692_28213"
+          style="mask-type: alpha"
+          maskUnits="userSpaceOnUse"
+          x="0"
+          y="0"
+          width="24"
+          height="24"
+        >
+          <rect width="24" height="24" fill="#D9D9D9"></rect>
+        </mask>
+        <g mask="url(#mask0_1692_28213)">
+          <path
+            d="M11 21V15H13V17H21V19H13V21H11ZM3 19V17H9V19H3ZM7 15V13H3V11H7V9H9V15H7ZM11 13V11H21V13H11ZM15 9V3H17V5H21V7H17V9H15ZM3 7V5H13V7H3Z"
+            fill="#1A1A1E"
+          ></path>
+        </g>
+      </svg>
+      <span>Bộ lọc</span>
+    </div>
+    <div class="clear-filter">Xoá lọc</div>
+  </div>
+  <form action="">
+    <div class="filter-content">
+      <div class="filter-data-item discount button-type" [class.active]="isDiscountOne">
+        <div class="title">
+          <h4>Giảm giá</h4>
+          <span class="arrow" (click)="handleDiscountOne()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M12.0002 10.828L7.05023 15.778L5.63623 14.364L12.0002 8L18.3642 14.364L16.9502 15.778L12.0002 10.828Z"
+                fill="#282F42"
+              ></path>
+            </svg>
+          </span>
+        </div>
+        <!-- <div class="filter-data" [class.current]="isDiscountOne">
+          <div class="filter-list click-type filter-list-radio">
+            <input type="hidden" name="percentage" value="" />
+            <label class="filter-item">0-10%</label>
+            <label class="filter-item">10%-50%</label>
+            <label class="filter-item">50%-80%</label>
+          </div>
+        </div> -->
+        <div class="filter-data" [class.current]="isDiscountOne">
+          <div class="filter-list click-type filter-list-radio">
+            <input type="hidden" name="percentage" value="" />
+            <label
+              class="filter-item"
+              *ngFor="let item of ['0-10%', '10%-50%', '50%-80%']; let i = index"
+              [class.active]="selectedDiscount === item"
+              (click)="selectDiscount(item)"
+            >
+              {{ item }}
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="filter-data-item discount button-type" [class.active]="isDiscountTwo">
+        <div class="title">
+          <h4>Giảm giá</h4>
+          <span class="arrow" (click)="handleDiscountTwo()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M12.0002 10.828L7.05023 15.778L5.63623 14.364L12.0002 8L18.3642 14.364L16.9502 15.778L12.0002 10.828Z"
+                fill="#282F42"
+              ></path>
+            </svg>
+          </span>
+        </div>
+        <div class="filter-data" [class.current]="isDiscountTwo">
+          <div class="filter-list click-type filter-list-radio">
+            <input type="hidden" name="percentage" value="" />
+            <label
+              class="filter-item"
+              *ngFor="let item of ['0-100k', '100-500k', '500-1000k']; let i = index"
+              [class.active]="selectedDiscount === item"
+              (click)="selectDiscount(item)"
+            >
+              {{ item }}
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="filter-data-item color circle-type" [class.active]="isDiscountThree">
+        <div class="title">
+          <h4>Màu sắc</h4>
+          <span class="arrow" (click)="handleDiscountThree()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M12.0002 10.828L7.05023 15.778L5.63623 14.364L12.0002 8L18.3642 14.364L16.9502 15.778L12.0002 10.828Z"
+                fill="#282F42"
+              ></path>
+            </svg>
+          </span>
+        </div>
+        <div class="filter-data" [class.current]="isDiscountThree">
+          <div class="filter-list click-type filter-list-checkbox">
+            <input type="checkbox" id="color_blue" />
+            <label class="filter-item" for="color_blue">
+              <span style="background-color: #36baee"></span>
+            </label>
+            <input type="checkbox" id="color_yellow" />
+            <label class="filter-item" for="color_yellow">
+              <span style="background-color: #fffb00"></span>
+            </label>
+            <input type="checkbox" id="color_black" />
+            <label class="filter-item" for="color_black">
+              <span style="background-color: #000000"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="filter-data-item size button-type" [class.active]="isDiscountFour">
+        <div class="title">
+          <h4>Kích thước</h4>
+          <span class="arrow" (click)="handleDiscountFour()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M12.0002 10.828L7.05023 15.778L5.63623 14.364L12.0002 8L18.3642 14.364L16.9502 15.778L12.0002 10.828Z"
+                fill="#282F42"
+              ></path>
+            </svg>
+          </span>
+        </div>
+        <div class="filter-data" [class.current]="isDiscountFour">
+          <div class="filter-list click-type filter-list-size">
+            <input type="checkbox" id="checkbox_size_1" />
+            <label class="filter-item" for="checkbox_size_1"> S </label>
+            <input type="checkbox" id="checkbox_size_2" />
+            <label class="filter-item" for="checkbox_size_2"> M </label>
+            <input type="checkbox" id="checkbox_size_3" />
+            <label class="filter-item" for="checkbox_size_3"> L </label>
+          </div>
+        </div>
+      </div>
+      <div class="filter-data-item material radio-type active" [class.active]="isDiscountFive">
+        <div class="title">
+          <h4>Chất liệu</h4>
+          <span class="arrow" (click)="handleDiscountFive()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M12.0002 10.828L7.05023 15.778L5.63623 14.364L12.0002 8L18.3642 14.364L16.9502 15.778L12.0002 10.828Z"
+                fill="#282F42"
+              ></path>
+            </svg>
+          </span>
+        </div>
+        <div class="filter-list" [class.current]="isDiscountFive">
+          <div class="filter-item">
+            <label class="custom-radio"
+              >100% Cotton
+              <input type="radio" data-toggle="item-filter" name="material" value="1" />
+              <span class="radiobtn"></span>
+            </label>
+          </div>
+          <div class="filter-item">
+            <label class="custom-radio"
+              >Cotton x Poly x Spandex
+              <input type="radio" data-toggle="item-filter" name="material" value="7" />
+              <span class="radiobtn"></span>
+            </label>
+          </div>
+          <div class="filter-item">
+            <label class="custom-radio"
+              >Poly x Spandex
+              <input type="radio" data-toggle="item-filter" name="material" value="8" />
+              <span class="radiobtn"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

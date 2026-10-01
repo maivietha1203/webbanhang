@@ -7,9 +7,9 @@
         <div class="item-product">
           <div class="product-top">
             <div class="product-image">
-              <a href="">
+              <div>
                 <img [src]="product.image" [alt]="product.name" />
-              </a>
+              </div>
             </div>
 
             <div class="label discount" style="display: block">
@@ -55,12 +55,12 @@
               </div>
             </div>
 
-            <div class="product-name">
-              <a href="">
+            <div class="product-name" style="cursor: pointer">
+              <div routerLink="/detail/id">
                 <h3>
                   {{ product.name }}
                 </h3>
-              </a>
+              </div>
             </div>
 
             <div class="price-product">
